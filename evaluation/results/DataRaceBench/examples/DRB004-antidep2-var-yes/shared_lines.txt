@@ -1,0 +1,3 @@
+micro-benchmarks/DRB004-antidep2-var-yes.c:68  R=3 W=0 total=3
+micro-benchmarks/DRB004-antidep2-var-yes.c:69  R=294 W=0 total=294
+micro-benchmarks/DRB004-antidep2-var-yes.c:70  R=560 W=280 total=840

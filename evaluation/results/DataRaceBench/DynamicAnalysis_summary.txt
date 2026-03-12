@@ -1,0 +1,2492 @@
+DynamicAnalysis Summary
+Time: Wed Jan 28 18:14:12 CST 2026
+DRB_ROOT: /mnt/d/git/dataracebench
+BENCH_DIR: /mnt/d/git/dataracebench/micro-benchmarks
+OUT_ROOT: /mnt/d/git/dataracebench/DynamicAnalysis_results
+PASS_HOME: /home/zj/llvm-pass-demo
+CLANG: clang-10
+OPT: opt-10
+OMP_NUM_THREADS(default): 4
+TIMEOUT_SEC: 20
+
+============================================================
+BENCHMARK: DRB001-antidep1-orig-yes
+SRC: micro-benchmarks/DRB001-antidep1-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB001-antidep1-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB001-antidep1-orig-yes.c:63  R=3 W=0 total=3
+  micro-benchmarks/DRB001-antidep1-orig-yes.c:64  R=749 W=749 total=1498
+  micro-benchmarks/DRB001-antidep1-orig-yes.c:66  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB002-antidep1-var-yes
+SRC: micro-benchmarks/DRB002-antidep1-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB002-antidep1-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB002-antidep1-var-yes.c:66  R=3 W=0 total=3
+  micro-benchmarks/DRB002-antidep1-var-yes.c:67  R=750 W=749 total=1499
+
+============================================================
+BENCHMARK: DRB003-antidep2-orig-yes
+SRC: micro-benchmarks/DRB003-antidep2-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB003-antidep2-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB003-antidep2-orig-yes.c:65  R=3 W=0 total=3
+  micro-benchmarks/DRB003-antidep2-orig-yes.c:66  R=294 W=0 total=294
+  micro-benchmarks/DRB003-antidep2-orig-yes.c:67  R=560 W=280 total=840
+  micro-benchmarks/DRB003-antidep2-orig-yes.c:71  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB004-antidep2-var-yes
+SRC: micro-benchmarks/DRB004-antidep2-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB004-antidep2-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB004-antidep2-var-yes.c:68  R=3 W=0 total=3
+  micro-benchmarks/DRB004-antidep2-var-yes.c:69  R=294 W=0 total=294
+  micro-benchmarks/DRB004-antidep2-var-yes.c:70  R=560 W=280 total=840
+
+============================================================
+BENCHMARK: DRB005-indirectaccess1-orig-yes
+SRC: micro-benchmarks/DRB005-indirectaccess1-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB005-indirectaccess1-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB005-indirectaccess1-orig-yes.c:128  R=270 W=135 total=405
+  micro-benchmarks/DRB005-indirectaccess1-orig-yes.c:129  R=270 W=135 total=405
+  micro-benchmarks/DRB005-indirectaccess1-orig-yes.c:132  R=4 W=0 total=4
+
+============================================================
+BENCHMARK: DRB006-indirectaccess2-orig-yes
+SRC: micro-benchmarks/DRB006-indirectaccess2-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB006-indirectaccess2-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB006-indirectaccess2-orig-yes.c:128  R=306 W=135 total=441
+  micro-benchmarks/DRB006-indirectaccess2-orig-yes.c:129  R=306 W=135 total=441
+  micro-benchmarks/DRB006-indirectaccess2-orig-yes.c:131  R=4 W=0 total=4
+
+============================================================
+BENCHMARK: DRB007-indirectaccess3-orig-yes
+SRC: micro-benchmarks/DRB007-indirectaccess3-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB007-indirectaccess3-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB007-indirectaccess3-orig-yes.c:128  R=270 W=135 total=405
+  micro-benchmarks/DRB007-indirectaccess3-orig-yes.c:129  R=270 W=135 total=405
+  micro-benchmarks/DRB007-indirectaccess3-orig-yes.c:131  R=4 W=0 total=4
+
+============================================================
+BENCHMARK: DRB008-indirectaccess4-orig-yes
+SRC: micro-benchmarks/DRB008-indirectaccess4-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB008-indirectaccess4-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB008-indirectaccess4-orig-yes.c:128  R=270 W=135 total=405
+  micro-benchmarks/DRB008-indirectaccess4-orig-yes.c:129  R=270 W=135 total=405
+  micro-benchmarks/DRB008-indirectaccess4-orig-yes.c:131  R=4 W=0 total=4
+
+============================================================
+BENCHMARK: DRB009-lastprivatemissing-orig-yes
+SRC: micro-benchmarks/DRB009-lastprivatemissing-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB009-lastprivatemissing-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB009-lastprivatemissing-orig-yes.c:58  R=3 W=0 total=3
+  micro-benchmarks/DRB009-lastprivatemissing-orig-yes.c:59  R=0 W=9522 total=9522
+  micro-benchmarks/DRB009-lastprivatemissing-orig-yes.c:61  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB010-lastprivatemissing-var-yes
+SRC: micro-benchmarks/DRB010-lastprivatemissing-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB010-lastprivatemissing-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB010-lastprivatemissing-var-yes.c:62  R=3 W=0 total=3
+  micro-benchmarks/DRB010-lastprivatemissing-var-yes.c:63  R=0 W=9367 total=9367
+  micro-benchmarks/DRB010-lastprivatemissing-var-yes.c:64  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB011-minusminus-orig-yes
+SRC: micro-benchmarks/DRB011-minusminus-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB011-minusminus-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB011-minusminus-orig-yes.c:72  R=3 W=0 total=3
+  micro-benchmarks/DRB011-minusminus-orig-yes.c:73  R=75 W=0 total=75
+  micro-benchmarks/DRB011-minusminus-orig-yes.c:74  R=37 W=37 total=74
+  micro-benchmarks/DRB011-minusminus-orig-yes.c:77  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB012-minusminus-var-yes
+SRC: micro-benchmarks/DRB012-minusminus-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB012-minusminus-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB012-minusminus-var-yes.c:72  R=3 W=0 total=3
+  micro-benchmarks/DRB012-minusminus-var-yes.c:73  R=75 W=0 total=75
+  micro-benchmarks/DRB012-minusminus-var-yes.c:74  R=37 W=37 total=74
+
+============================================================
+BENCHMARK: DRB013-nowait-orig-yes
+SRC: micro-benchmarks/DRB013-nowait-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB013-nowait-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB013-nowait-orig-yes.c:71  R=3 W=0 total=3
+  micro-benchmarks/DRB013-nowait-orig-yes.c:72  R=1500 W=750 total=2250
+
+============================================================
+BENCHMARK: DRB014-outofbounds-orig-yes
+SRC: micro-benchmarks/DRB014-outofbounds-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB014-outofbounds-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB014-outofbounds-orig-yes.c:73  R=3 W=0 total=3
+  micro-benchmarks/DRB014-outofbounds-orig-yes.c:74  R=9710 W=0 total=9710
+  micro-benchmarks/DRB014-outofbounds-orig-yes.c:75  R=0 W=3 total=3
+
+============================================================
+BENCHMARK: DRB015-outofbounds-var-yes
+SRC: micro-benchmarks/DRB015-outofbounds-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB015-outofbounds-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB015-outofbounds-var-yes.c:78  R=3 W=0 total=3
+  micro-benchmarks/DRB015-outofbounds-var-yes.c:79  R=9999 W=0 total=9999
+  micro-benchmarks/DRB015-outofbounds-var-yes.c:80  R=0 W=3 total=3
+
+============================================================
+BENCHMARK: DRB016-outputdep-orig-yes
+SRC: micro-benchmarks/DRB016-outputdep-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB016-outputdep-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB016-outputdep-orig-yes.c:71  R=3 W=0 total=3
+  micro-benchmarks/DRB016-outputdep-orig-yes.c:73  R=75 W=0 total=75
+  micro-benchmarks/DRB016-outputdep-orig-yes.c:74  R=0 W=75 total=75
+  micro-benchmarks/DRB016-outputdep-orig-yes.c:76  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB017-outputdep-var-yes
+SRC: micro-benchmarks/DRB017-outputdep-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB017-outputdep-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB017-outputdep-var-yes.c:69  R=4 W=0 total=4
+  micro-benchmarks/DRB017-outputdep-var-yes.c:71  R=100 W=0 total=100
+  micro-benchmarks/DRB017-outputdep-var-yes.c:72  R=0 W=100 total=100
+  micro-benchmarks/DRB017-outputdep-var-yes.c:74  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB018-plusplus-orig-yes
+SRC: micro-benchmarks/DRB018-plusplus-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB018-plusplus-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB018-plusplus-orig-yes.c:71  R=3 W=0 total=3
+  micro-benchmarks/DRB018-plusplus-orig-yes.c:73  R=1592 W=842 total=2434
+  micro-benchmarks/DRB018-plusplus-orig-yes.c:76  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB019-plusplus-var-yes
+SRC: micro-benchmarks/DRB019-plusplus-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB019-plusplus-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB019-plusplus-var-yes.c:72  R=3 W=0 total=3
+  micro-benchmarks/DRB019-plusplus-var-yes.c:73  R=1750 W=1008 total=2758
+  micro-benchmarks/DRB019-plusplus-var-yes.c:76  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB020-privatemissing-var-yes
+SRC: micro-benchmarks/DRB020-privatemissing-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB020-privatemissing-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB020-privatemissing-var-yes.c:63  R=3 W=0 total=3
+  micro-benchmarks/DRB020-privatemissing-var-yes.c:65  R=75 W=75 total=150
+  micro-benchmarks/DRB020-privatemissing-var-yes.c:66  R=75 W=75 total=150
+
+============================================================
+BENCHMARK: DRB021-reductionmissing-orig-yes
+SRC: micro-benchmarks/DRB021-reductionmissing-orig-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB021-reductionmissing-orig-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB022-reductionmissing-var-yes
+SRC: micro-benchmarks/DRB022-reductionmissing-var-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB022-reductionmissing-var-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB023-sections1-orig-yes
+SRC: micro-benchmarks/DRB023-sections1-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB023-sections1-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB023-sections1-orig-yes.c:60  R=0 W=1 total=1
+  micro-benchmarks/DRB023-sections1-orig-yes.c:62  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB024-simdtruedep-orig-yes
+SRC: micro-benchmarks/DRB024-simdtruedep-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB024-simdtruedep-orig-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB025-simdtruedep-var-yes
+SRC: micro-benchmarks/DRB025-simdtruedep-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB025-simdtruedep-var-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB026-targetparallelfor-orig-yes
+SRC: micro-benchmarks/DRB026-targetparallelfor-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB026-targetparallelfor-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB026-targetparallelfor-orig-yes.c:63  R=3 W=0 total=3
+  micro-benchmarks/DRB026-targetparallelfor-orig-yes.c:64  R=750 W=749 total=1499
+
+============================================================
+BENCHMARK: DRB027-taskdependmissing-orig-yes
+SRC: micro-benchmarks/DRB027-taskdependmissing-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 5
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB027-taskdependmissing-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB027-taskdependmissing-orig-yes.c:60  R=1 W=0 total=1
+  micro-benchmarks/DRB027-taskdependmissing-orig-yes.c:61  R=0 W=1 total=1
+  micro-benchmarks/DRB027-taskdependmissing-orig-yes.c:62  R=1 W=0 total=1
+  micro-benchmarks/DRB027-taskdependmissing-orig-yes.c:63  R=0 W=1 total=1
+  micro-benchmarks/DRB027-taskdependmissing-orig-yes.c:66  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB028-privatemissing-orig-yes
+SRC: micro-benchmarks/DRB028-privatemissing-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB028-privatemissing-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB028-privatemissing-orig-yes.c:63  R=3 W=0 total=3
+  micro-benchmarks/DRB028-privatemissing-orig-yes.c:65  R=75 W=75 total=150
+  micro-benchmarks/DRB028-privatemissing-orig-yes.c:66  R=75 W=75 total=150
+  micro-benchmarks/DRB028-privatemissing-orig-yes.c:69  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB029-truedep1-orig-yes
+SRC: micro-benchmarks/DRB029-truedep1-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB029-truedep1-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB029-truedep1-orig-yes.c:63  R=3 W=0 total=3
+  micro-benchmarks/DRB029-truedep1-orig-yes.c:64  R=74 W=74 total=148
+  micro-benchmarks/DRB029-truedep1-orig-yes.c:66  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB030-truedep1-var-yes
+SRC: micro-benchmarks/DRB030-truedep1-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB030-truedep1-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB030-truedep1-var-yes.c:67  R=3 W=0 total=3
+  micro-benchmarks/DRB030-truedep1-var-yes.c:68  R=74 W=74 total=148
+
+============================================================
+BENCHMARK: DRB031-truedepfirstdimension-orig-yes
+SRC: micro-benchmarks/DRB031-truedepfirstdimension-orig-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB031-truedepfirstdimension-orig-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB032-truedepfirstdimension-var-yes
+SRC: micro-benchmarks/DRB032-truedepfirstdimension-var-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB032-truedepfirstdimension-var-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB033-truedeplinear-orig-yes
+SRC: micro-benchmarks/DRB033-truedeplinear-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB033-truedeplinear-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB033-truedeplinear-orig-yes.c:64  R=750 W=834 total=1584
+  micro-benchmarks/DRB033-truedeplinear-orig-yes.c:66  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB034-truedeplinear-var-yes
+SRC: micro-benchmarks/DRB034-truedeplinear-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB034-truedeplinear-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB034-truedeplinear-var-yes.c:65  R=3 W=0 total=3
+  micro-benchmarks/DRB034-truedeplinear-var-yes.c:66  R=750 W=750 total=1500
+
+============================================================
+BENCHMARK: DRB035-truedepscalar-orig-yes
+SRC: micro-benchmarks/DRB035-truedepscalar-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB035-truedepscalar-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB035-truedepscalar-orig-yes.c:64  R=3 W=0 total=3
+  micro-benchmarks/DRB035-truedepscalar-orig-yes.c:66  R=75 W=0 total=75
+  micro-benchmarks/DRB035-truedepscalar-orig-yes.c:67  R=0 W=75 total=75
+  micro-benchmarks/DRB035-truedepscalar-orig-yes.c:70  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB036-truedepscalar-var-yes
+SRC: micro-benchmarks/DRB036-truedepscalar-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB036-truedepscalar-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB036-truedepscalar-var-yes.c:65  R=3 W=0 total=3
+  micro-benchmarks/DRB036-truedepscalar-var-yes.c:67  R=75 W=0 total=75
+  micro-benchmarks/DRB036-truedepscalar-var-yes.c:68  R=0 W=75 total=75
+
+============================================================
+BENCHMARK: DRB037-truedepseconddimension-orig-yes
+SRC: micro-benchmarks/DRB037-truedepseconddimension-orig-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB037-truedepseconddimension-orig-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB038-truedepseconddimension-var-yes
+SRC: micro-benchmarks/DRB038-truedepseconddimension-var-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB038-truedepseconddimension-var-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB039-truedepsingleelement-orig-yes
+SRC: micro-benchmarks/DRB039-truedepsingleelement-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB039-truedepsingleelement-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB039-truedepsingleelement-orig-yes.c:61  R=3 W=0 total=3
+  micro-benchmarks/DRB039-truedepsingleelement-orig-yes.c:62  R=750 W=0 total=750
+  micro-benchmarks/DRB039-truedepsingleelement-orig-yes.c:64  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB040-truedepsingleelement-var-yes
+SRC: micro-benchmarks/DRB040-truedepsingleelement-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB040-truedepsingleelement-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB040-truedepsingleelement-var-yes.c:62  R=4 W=0 total=4
+  micro-benchmarks/DRB040-truedepsingleelement-var-yes.c:63  R=1001 W=1 total=1002
+
+============================================================
+BENCHMARK: DRB041-3mm-parallel-no
+SRC: micro-benchmarks/DRB041-3mm-parallel-no.c
+OPENMP: yes
+STATUS: LINK_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB041-3mm-parallel-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB042-3mm-tile-no
+SRC: micro-benchmarks/DRB042-3mm-tile-no.c
+OPENMP: yes
+STATUS: LINK_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB042-3mm-tile-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB043-adi-parallel-no
+SRC: micro-benchmarks/DRB043-adi-parallel-no.c
+OPENMP: yes
+STATUS: LINK_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB043-adi-parallel-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB044-adi-tile-no
+SRC: micro-benchmarks/DRB044-adi-tile-no.c
+OPENMP: yes
+STATUS: LINK_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB044-adi-tile-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB045-doall1-orig-no
+SRC: micro-benchmarks/DRB045-doall1-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB045-doall1-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB046-doall2-orig-no
+SRC: micro-benchmarks/DRB046-doall2-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB046-doall2-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB047-doallchar-orig-no
+SRC: micro-benchmarks/DRB047-doallchar-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB047-doallchar-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB048-firstprivate-orig-no
+SRC: micro-benchmarks/DRB048-firstprivate-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB048-firstprivate-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB048-firstprivate-orig-no.c:55  R=3 W=0 total=3
+  micro-benchmarks/DRB048-firstprivate-orig-no.c:57  R=150 W=0 total=150
+
+============================================================
+BENCHMARK: DRB049-fprintf-orig-no
+SRC: micro-benchmarks/DRB049-fprintf-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB049-fprintf-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB049-fprintf-orig-no.c:70  R=3 W=0 total=3
+  micro-benchmarks/DRB049-fprintf-orig-no.c:72  R=1749 W=0 total=1749
+  micro-benchmarks/DRB049-fprintf-orig-no.c:75  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB050-functionparameter-orig-no
+SRC: micro-benchmarks/DRB050-functionparameter-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB050-functionparameter-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB050-functionparameter-orig-no.c:54  R=3 W=0 total=3
+  micro-benchmarks/DRB050-functionparameter-orig-no.c:55  R=75 W=0 total=75
+  micro-benchmarks/DRB050-functionparameter-orig-no.c:56  R=75 W=0 total=75
+
+============================================================
+BENCHMARK: DRB051-getthreadnum-orig-no
+SRC: micro-benchmarks/DRB051-getthreadnum-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB051-getthreadnum-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB052-indirectaccesssharebase-orig-no
+SRC: micro-benchmarks/DRB052-indirectaccesssharebase-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB052-indirectaccesssharebase-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB052-indirectaccesssharebase-orig-no.c:119  R=270 W=135 total=405
+  micro-benchmarks/DRB052-indirectaccesssharebase-orig-no.c:120  R=270 W=135 total=405
+  micro-benchmarks/DRB052-indirectaccesssharebase-orig-no.c:127  R=270 W=0 total=270
+
+============================================================
+BENCHMARK: DRB053-inneronly1-orig-no
+SRC: micro-benchmarks/DRB053-inneronly1-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB053-inneronly1-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB053-inneronly1-orig-no.c:59  R=38 W=19 total=57
+  micro-benchmarks/DRB053-inneronly1-orig-no.c:62  R=750 W=0 total=750
+
+============================================================
+BENCHMARK: DRB054-inneronly2-orig-no
+SRC: micro-benchmarks/DRB054-inneronly2-orig-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB054-inneronly2-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB055-jacobi2d-parallel-no
+SRC: micro-benchmarks/DRB055-jacobi2d-parallel-no.c
+OPENMP: yes
+STATUS: LINK_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB055-jacobi2d-parallel-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB056-jacobi2d-tile-no
+SRC: micro-benchmarks/DRB056-jacobi2d-tile-no.c
+OPENMP: yes
+STATUS: LINK_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB056-jacobi2d-tile-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB057-jacobiinitialize-orig-no
+SRC: micro-benchmarks/DRB057-jacobiinitialize-orig-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB057-jacobiinitialize-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB058-jacobikernel-orig-no
+SRC: micro-benchmarks/DRB058-jacobikernel-orig-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB058-jacobikernel-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB059-lastprivate-orig-no
+SRC: micro-benchmarks/DRB059-lastprivate-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 1
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB059-lastprivate-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB059-lastprivate-orig-no.c:62  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB060-matrixmultiply-orig-no
+SRC: micro-benchmarks/DRB060-matrixmultiply-orig-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB060-matrixmultiply-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB061-matrixvector1-orig-no
+SRC: micro-benchmarks/DRB061-matrixvector1-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 1
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB061-matrixvector1-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB061-matrixvector1-orig-no.c:62  R=9759 W=0 total=9759
+
+============================================================
+BENCHMARK: DRB062-matrixvector2-orig-no
+SRC: micro-benchmarks/DRB062-matrixvector2-orig-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB062-matrixvector2-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB063-outeronly1-orig-no
+SRC: micro-benchmarks/DRB063-outeronly1-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB063-outeronly1-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB063-outeronly1-orig-no.c:58  R=3 W=0 total=3
+  micro-benchmarks/DRB063-outeronly1-orig-no.c:59  R=9769 W=0 total=9769
+
+============================================================
+BENCHMARK: DRB064-outeronly2-orig-no
+SRC: micro-benchmarks/DRB064-outeronly2-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB064-outeronly2-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB064-outeronly2-orig-no.c:60  R=3 W=0 total=3
+  micro-benchmarks/DRB064-outeronly2-orig-no.c:61  R=9948 W=0 total=9948
+
+============================================================
+BENCHMARK: DRB065-pireduction-orig-no
+SRC: micro-benchmarks/DRB065-pireduction-orig-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB065-pireduction-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB066-pointernoaliasing-orig-no
+SRC: micro-benchmarks/DRB066-pointernoaliasing-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 5
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB066-pointernoaliasing-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB066-pointernoaliasing-orig-no.c:57  R=3 W=0 total=3
+  micro-benchmarks/DRB066-pointernoaliasing-orig-no.c:59  R=868 W=0 total=868
+  micro-benchmarks/DRB066-pointernoaliasing-orig-no.c:60  R=868 W=0 total=868
+  micro-benchmarks/DRB066-pointernoaliasing-orig-no.c:63  R=1 W=0 total=1
+  micro-benchmarks/DRB066-pointernoaliasing-orig-no.c:64  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB067-restrictpointer1-orig-no
+SRC: micro-benchmarks/DRB067-restrictpointer1-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB067-restrictpointer1-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB067-restrictpointer1-orig-no.c:63  R=750 W=0 total=750
+  micro-benchmarks/DRB067-restrictpointer1-orig-no.c:64  R=750 W=0 total=750
+
+============================================================
+BENCHMARK: DRB068-restrictpointer2-orig-no
+SRC: micro-benchmarks/DRB068-restrictpointer2-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB068-restrictpointer2-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB068-restrictpointer2-orig-no.c:62  R=3 W=0 total=3
+  micro-benchmarks/DRB068-restrictpointer2-orig-no.c:63  R=2250 W=0 total=2250
+
+============================================================
+BENCHMARK: DRB069-sectionslock1-orig-no
+SRC: micro-benchmarks/DRB069-sectionslock1-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB069-sectionslock1-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB069-sectionslock1-orig-no.c:63  R=1 W=1 total=2
+  micro-benchmarks/DRB069-sectionslock1-orig-no.c:69  R=1 W=1 total=2
+  micro-benchmarks/DRB069-sectionslock1-orig-no.c:75  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB070-simd1-orig-no
+SRC: micro-benchmarks/DRB070-simd1-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB070-simd1-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB071-targetparallelfor-orig-no
+SRC: micro-benchmarks/DRB071-targetparallelfor-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB071-targetparallelfor-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB071-targetparallelfor-orig-no.c:61  R=3 W=0 total=3
+  micro-benchmarks/DRB071-targetparallelfor-orig-no.c:62  R=750 W=750 total=1500
+
+============================================================
+BENCHMARK: DRB072-taskdep1-orig-no
+SRC: micro-benchmarks/DRB072-taskdep1-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 5
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB072-taskdep1-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB072-taskdep1-orig-no.c:58  R=1 W=0 total=1
+  micro-benchmarks/DRB072-taskdep1-orig-no.c:59  R=0 W=1 total=1
+  micro-benchmarks/DRB072-taskdep1-orig-no.c:60  R=1 W=0 total=1
+  micro-benchmarks/DRB072-taskdep1-orig-no.c:61  R=0 W=1 total=1
+  micro-benchmarks/DRB072-taskdep1-orig-no.c:64  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB073-doall2-orig-yes
+SRC: micro-benchmarks/DRB073-doall2-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB073-doall2-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB073-doall2-orig-yes.c:61  R=18945 W=9520 total=28465
+  micro-benchmarks/DRB073-doall2-orig-yes.c:62  R=18848 W=0 total=18848
+
+============================================================
+BENCHMARK: DRB074-flush-orig-yes
+SRC: micro-benchmarks/DRB074-flush-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB074-flush-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB074-flush-orig-yes.c:60  R=0 W=10 total=10
+  micro-benchmarks/DRB074-flush-orig-yes.c:68  R=18 W=0 total=18
+  micro-benchmarks/DRB074-flush-orig-yes.c:71  R=10 W=0 total=10
+
+============================================================
+BENCHMARK: DRB075-getthreadnum-orig-yes
+SRC: micro-benchmarks/DRB075-getthreadnum-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 1
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB075-getthreadnum-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB075-getthreadnum-orig-yes.c:64  R=3 W=0 total=3
+
+============================================================
+BENCHMARK: DRB076-flush-orig-no
+SRC: micro-benchmarks/DRB076-flush-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 1
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB076-flush-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB076-flush-orig-no.c:65  R=18 W=0 total=18
+
+============================================================
+BENCHMARK: DRB077-single-orig-no
+SRC: micro-benchmarks/DRB077-single-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB077-single-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB078-taskdep2-orig-no
+SRC: micro-benchmarks/DRB078-taskdep2-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 5
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB078-taskdep2-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB078-taskdep2-orig-no.c:60  R=1 W=0 total=1
+  micro-benchmarks/DRB078-taskdep2-orig-no.c:63  R=0 W=1 total=1
+  micro-benchmarks/DRB078-taskdep2-orig-no.c:65  R=1 W=0 total=1
+  micro-benchmarks/DRB078-taskdep2-orig-no.c:66  R=0 W=1 total=1
+  micro-benchmarks/DRB078-taskdep2-orig-no.c:69  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB079-taskdep3-orig-no
+SRC: micro-benchmarks/DRB079-taskdep3-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 8
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB079-taskdep3-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB079-taskdep3-orig-no.c:60  R=1 W=0 total=1
+  micro-benchmarks/DRB079-taskdep3-orig-no.c:63  R=0 W=1 total=1
+  micro-benchmarks/DRB079-taskdep3-orig-no.c:65  R=1 W=0 total=1
+  micro-benchmarks/DRB079-taskdep3-orig-no.c:66  R=1 W=0 total=1
+  micro-benchmarks/DRB079-taskdep3-orig-no.c:67  R=1 W=0 total=1
+  micro-benchmarks/DRB079-taskdep3-orig-no.c:68  R=1 W=0 total=1
+  micro-benchmarks/DRB079-taskdep3-orig-no.c:70  R=2 W=0 total=2
+  micro-benchmarks/DRB079-taskdep3-orig-no.c:71  R=2 W=0 total=2
+
+============================================================
+BENCHMARK: DRB080-func-arg-orig-yes
+SRC: micro-benchmarks/DRB080-func-arg-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB080-func-arg-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB080-func-arg-orig-yes.c:59  R=3 W=3 total=6
+  micro-benchmarks/DRB080-func-arg-orig-yes.c:69  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB081-func-arg-orig-no
+SRC: micro-benchmarks/DRB081-func-arg-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB081-func-arg-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB081-func-arg-orig-no.c:65  R=3 W=0 total=3
+  micro-benchmarks/DRB081-func-arg-orig-no.c:67  R=1 W=0 total=1
+  micro-benchmarks/DRB081-func-arg-orig-no.c:68  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB082-declared-in-func-orig-yes
+SRC: micro-benchmarks/DRB082-declared-in-func-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 1
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB082-declared-in-func-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB082-declared-in-func-orig-yes.c:57  R=3 W=3 total=6
+
+============================================================
+BENCHMARK: DRB083-declared-in-func-orig-no
+SRC: micro-benchmarks/DRB083-declared-in-func-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB083-declared-in-func-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB084-threadprivatemissing-orig-yes
+SRC: micro-benchmarks/DRB084-threadprivatemissing-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB084-threadprivatemissing-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB084-threadprivatemissing-orig-yes.c:61  R=903 W=903 total=1806
+  micro-benchmarks/DRB084-threadprivatemissing-orig-yes.c:76  R=8 W=4 total=12
+  micro-benchmarks/DRB084-threadprivatemissing-orig-yes.c:84  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB085-threadprivate-orig-no
+SRC: micro-benchmarks/DRB085-threadprivate-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 7
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB085-threadprivate-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB085-threadprivate-orig-no.c:59  R=250 W=250 total=500
+  micro-benchmarks/DRB085-threadprivate-orig-no.c:66  R=2 W=0 total=2
+  micro-benchmarks/DRB085-threadprivate-orig-no.c:69  R=4 W=0 total=4
+  micro-benchmarks/DRB085-threadprivate-orig-no.c:75  R=5 W=4 total=9
+  micro-benchmarks/DRB085-threadprivate-orig-no.c:79  R=1001 W=0 total=1001
+  micro-benchmarks/DRB085-threadprivate-orig-no.c:83  R=1 W=0 total=1
+  micro-benchmarks/DRB085-threadprivate-orig-no.c:84  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB088-dynamic-storage-orig-yes
+SRC: micro-benchmarks/DRB088-dynamic-storage-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB088-dynamic-storage-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB088-dynamic-storage-orig-yes.c:63  R=6 W=3 total=9
+  micro-benchmarks/DRB088-dynamic-storage-orig-yes.c:79  R=2 W=0 total=2
+  micro-benchmarks/DRB088-dynamic-storage-orig-yes.c:80  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB089-dynamic-storage2-orig-yes
+SRC: micro-benchmarks/DRB089-dynamic-storage2-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB089-dynamic-storage2-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB089-dynamic-storage2-orig-yes.c:73  R=6 W=3 total=9
+  micro-benchmarks/DRB089-dynamic-storage2-orig-yes.c:75  R=2 W=0 total=2
+  micro-benchmarks/DRB089-dynamic-storage2-orig-yes.c:76  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB090-static-local-orig-yes
+SRC: micro-benchmarks/DRB090-static-local-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 7
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB090-static-local-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB090-static-local-orig-yes.c:71  R=3 W=0 total=3
+  micro-benchmarks/DRB090-static-local-orig-yes.c:73  R=75 W=75 total=150
+  micro-benchmarks/DRB090-static-local-orig-yes.c:74  R=75 W=75 total=150
+  micro-benchmarks/DRB090-static-local-orig-yes.c:83  R=4 W=0 total=4
+  micro-benchmarks/DRB090-static-local-orig-yes.c:85  R=75 W=0 total=75
+  micro-benchmarks/DRB090-static-local-orig-yes.c:86  R=0 W=75 total=75
+  micro-benchmarks/DRB090-static-local-orig-yes.c:90  R=2 W=0 total=2
+
+============================================================
+BENCHMARK: DRB091-threadprivate2-orig-no
+SRC: micro-benchmarks/DRB091-threadprivate2-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 7
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB091-threadprivate2-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB091-threadprivate2-orig-no.c:62  R=2 W=0 total=2
+  micro-benchmarks/DRB091-threadprivate2-orig-no.c:65  R=4 W=0 total=4
+  micro-benchmarks/DRB091-threadprivate2-orig-no.c:67  R=250 W=250 total=500
+  micro-benchmarks/DRB091-threadprivate2-orig-no.c:71  R=5 W=4 total=9
+  micro-benchmarks/DRB091-threadprivate2-orig-no.c:75  R=1001 W=0 total=1001
+  micro-benchmarks/DRB091-threadprivate2-orig-no.c:79  R=1 W=0 total=1
+  micro-benchmarks/DRB091-threadprivate2-orig-no.c:80  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB092-threadprivatemissing2-orig-yes
+SRC: micro-benchmarks/DRB092-threadprivatemissing2-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB092-threadprivatemissing2-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB092-threadprivatemissing2-orig-yes.c:68  R=791 W=791 total=1582
+  micro-benchmarks/DRB092-threadprivatemissing2-orig-yes.c:72  R=8 W=4 total=12
+  micro-benchmarks/DRB092-threadprivatemissing2-orig-yes.c:80  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB093-doall2-collapse-orig-no
+SRC: micro-benchmarks/DRB093-doall2-collapse-orig-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB093-doall2-collapse-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB094-doall2-ordered-orig-no
+SRC: micro-benchmarks/DRB094-doall2-ordered-orig-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB094-doall2-ordered-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB095-doall2-taskloop-orig-yes
+SRC: micro-benchmarks/DRB095-doall2-taskloop-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB095-doall2-taskloop-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB095-doall2-taskloop-orig-yes.c:69  R=18370 W=9232 total=27602
+  micro-benchmarks/DRB095-doall2-taskloop-orig-yes.c:70  R=9138 W=0 total=9138
+
+============================================================
+BENCHMARK: DRB096-doall2-taskloop-collapse-orig-no
+SRC: micro-benchmarks/DRB096-doall2-taskloop-collapse-orig-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB096-doall2-taskloop-collapse-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB097-target-teams-distribute-orig-no
+SRC: micro-benchmarks/DRB097-target-teams-distribute-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 5
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB097-target-teams-distribute-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB097-target-teams-distribute-orig-no.c:71  R=3830 W=0 total=3830
+  micro-benchmarks/DRB097-target-teams-distribute-orig-no.c:74  R=4 W=4 total=8
+  micro-benchmarks/DRB097-target-teams-distribute-orig-no.c:75  R=3 W=0 total=3
+  micro-benchmarks/DRB097-target-teams-distribute-orig-no.c:76  R=3830 W=0 total=3830
+  micro-benchmarks/DRB097-target-teams-distribute-orig-no.c:77  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB098-simd2-orig-no
+SRC: micro-benchmarks/DRB098-simd2-orig-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB098-simd2-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB099-targetparallelfor2-orig-no
+SRC: micro-benchmarks/DRB099-targetparallelfor2-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB099-targetparallelfor2-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB099-targetparallelfor2-orig-no.c:55  R=3 W=0 total=3
+  micro-benchmarks/DRB099-targetparallelfor2-orig-no.c:56  R=2250 W=750 total=3000
+
+============================================================
+BENCHMARK: DRB102-copyprivate-orig-no
+SRC: micro-benchmarks/DRB102-copyprivate-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB102-copyprivate-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB102-copyprivate-orig-no.c:60  R=12 W=0 total=12
+  micro-benchmarks/DRB102-copyprivate-orig-no.c:66  R=2 W=0 total=2
+
+============================================================
+BENCHMARK: DRB103-master-orig-no
+SRC: micro-benchmarks/DRB103-master-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB103-master-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB104-nowait-barrier-orig-no
+SRC: micro-benchmarks/DRB104-nowait-barrier-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 5
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB104-nowait-barrier-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB104-nowait-barrier-orig-no.c:67  R=4 W=0 total=4
+  micro-benchmarks/DRB104-nowait-barrier-orig-no.c:68  R=1750 W=750 total=2500
+  micro-benchmarks/DRB104-nowait-barrier-orig-no.c:73  R=1 W=0 total=1
+  micro-benchmarks/DRB104-nowait-barrier-orig-no.c:75  R=1 W=0 total=1
+  micro-benchmarks/DRB104-nowait-barrier-orig-no.c:76  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB105-taskwait-orig-no
+SRC: micro-benchmarks/DRB105-taskwait-orig-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB105-taskwait-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB106-taskwaitmissing-orig-yes
+SRC: micro-benchmarks/DRB106-taskwaitmissing-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 5
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB106-taskwaitmissing-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB106-taskwaitmissing-orig-yes.c:60  R=44 W=4 total=48
+  micro-benchmarks/DRB106-taskwaitmissing-orig-yes.c:61  R=58 W=35 total=93
+  micro-benchmarks/DRB106-taskwaitmissing-orig-yes.c:62  R=24 W=6 total=30
+  micro-benchmarks/DRB106-taskwaitmissing-orig-yes.c:63  R=26 W=15 total=41
+  micro-benchmarks/DRB106-taskwaitmissing-orig-yes.c:65  R=29 W=0 total=29
+
+============================================================
+BENCHMARK: DRB107-taskgroup-orig-no
+SRC: micro-benchmarks/DRB107-taskgroup-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 6
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB107-taskgroup-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB107-taskgroup-orig-no.c:64  R=1 W=0 total=1
+  micro-benchmarks/DRB107-taskgroup-orig-no.c:67  R=0 W=1 total=1
+  micro-benchmarks/DRB107-taskgroup-orig-no.c:70  R=1 W=0 total=1
+  micro-benchmarks/DRB107-taskgroup-orig-no.c:72  R=0 W=1 total=1
+  micro-benchmarks/DRB107-taskgroup-orig-no.c:76  R=1 W=0 total=1
+  micro-benchmarks/DRB107-taskgroup-orig-no.c:77  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB108-atomic-orig-no
+SRC: micro-benchmarks/DRB108-atomic-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB108-atomic-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB109-orderedmissing-orig-yes
+SRC: micro-benchmarks/DRB109-orderedmissing-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB109-orderedmissing-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB109-orderedmissing-orig-yes.c:56  R=100 W=100 total=200
+  micro-benchmarks/DRB109-orderedmissing-orig-yes.c:58  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB110-ordered-orig-no
+SRC: micro-benchmarks/DRB110-ordered-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB110-ordered-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB110-ordered-orig-no.c:58  R=75 W=75 total=150
+  micro-benchmarks/DRB110-ordered-orig-no.c:61  R=1 W=0 total=1
+  micro-benchmarks/DRB110-ordered-orig-no.c:62  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB111-linearmissing-orig-yes
+SRC: micro-benchmarks/DRB111-linearmissing-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB111-linearmissing-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB111-linearmissing-orig-yes.c:68  R=3 W=0 total=3
+  micro-benchmarks/DRB111-linearmissing-orig-yes.c:70  R=325 W=75 total=400
+  micro-benchmarks/DRB111-linearmissing-orig-yes.c:71  R=100 W=100 total=200
+  micro-benchmarks/DRB111-linearmissing-orig-yes.c:74  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB112-linear-orig-no
+SRC: micro-benchmarks/DRB112-linear-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB112-linear-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB112-linear-orig-no.c:66  R=3 W=1 total=4
+  micro-benchmarks/DRB112-linear-orig-no.c:67  R=3 W=0 total=3
+  micro-benchmarks/DRB112-linear-orig-no.c:69  R=225 W=75 total=300
+  micro-benchmarks/DRB112-linear-orig-no.c:73  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB113-default-orig-no
+SRC: micro-benchmarks/DRB113-default-orig-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB113-default-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB114-if-orig-yes
+SRC: micro-benchmarks/DRB114-if-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB114-if-orig-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB115-forsimd-orig-yes
+SRC: micro-benchmarks/DRB115-forsimd-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB115-forsimd-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB115-forsimd-orig-yes.c:65  R=3 W=1 total=4
+  micro-benchmarks/DRB115-forsimd-orig-yes.c:66  R=148 W=74 total=222
+  micro-benchmarks/DRB115-forsimd-orig-yes.c:68  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB116-target-teams-orig-yes
+SRC: micro-benchmarks/DRB116-target-teams-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB116-target-teams-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB116-target-teams-orig-yes.c:66  R=1 W=1 total=2
+  micro-benchmarks/DRB116-target-teams-orig-yes.c:69  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB117-taskwait-waitonlychild-orig-yes
+SRC: micro-benchmarks/DRB117-taskwait-waitonlychild-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 5
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB117-taskwait-waitonlychild-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB117-taskwait-waitonlychild-orig-yes.c:37  R=1 W=0 total=1
+  micro-benchmarks/DRB117-taskwait-waitonlychild-orig-yes.c:39  R=1 W=0 total=1
+  micro-benchmarks/DRB117-taskwait-waitonlychild-orig-yes.c:41  R=2 W=0 total=2
+  micro-benchmarks/DRB117-taskwait-waitonlychild-orig-yes.c:47  R=1 W=0 total=1
+  micro-benchmarks/DRB117-taskwait-waitonlychild-orig-yes.c:51  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB118-nestlock-orig-no
+SRC: micro-benchmarks/DRB118-nestlock-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB118-nestlock-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB118-nestlock-orig-no.c:30  R=1 W=1 total=2
+  micro-benchmarks/DRB118-nestlock-orig-no.c:57  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB119-nestlock-orig-yes
+SRC: micro-benchmarks/DRB119-nestlock-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB119-nestlock-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB119-nestlock-orig-yes.c:32  R=1 W=1 total=2
+  micro-benchmarks/DRB119-nestlock-orig-yes.c:58  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB120-barrier-orig-no
+SRC: micro-benchmarks/DRB120-barrier-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB120-barrier-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB120-barrier-orig-no.c:30  R=1 W=1 total=2
+  micro-benchmarks/DRB120-barrier-orig-no.c:33  R=1 W=0 total=1
+  micro-benchmarks/DRB120-barrier-orig-no.c:34  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB121-reduction-orig-no
+SRC: micro-benchmarks/DRB121-reduction-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 5
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB121-reduction-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB121-reduction-orig-no.c:28  R=4 W=4 total=8
+  micro-benchmarks/DRB121-reduction-orig-no.c:30  R=3 W=3 total=6
+  micro-benchmarks/DRB121-reduction-orig-no.c:33  R=4 W=4 total=8
+  micro-benchmarks/DRB121-reduction-orig-no.c:37  R=8 W=0 total=8
+  micro-benchmarks/DRB121-reduction-orig-no.c:40  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB122-taskundeferred-orig-no
+SRC: micro-benchmarks/DRB122-taskundeferred-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB122-taskundeferred-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB123-taskundeferred-orig-yes
+SRC: micro-benchmarks/DRB123-taskundeferred-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB123-taskundeferred-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB123-taskundeferred-orig-yes.c:28  R=7 W=0 total=7
+  micro-benchmarks/DRB123-taskundeferred-orig-yes.c:30  R=10 W=10 total=20
+  micro-benchmarks/DRB123-taskundeferred-orig-yes.c:35  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB124-master-orig-yes
+SRC: micro-benchmarks/DRB124-master-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 1
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB124-master-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB124-master-orig-yes.c:36  R=3 W=0 total=3
+
+============================================================
+BENCHMARK: DRB125-single-orig-no
+SRC: micro-benchmarks/DRB125-single-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 1
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB125-single-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB125-single-orig-no.c:35  R=4 W=0 total=4
+
+============================================================
+BENCHMARK: DRB126-firstprivatesections-orig-no
+SRC: micro-benchmarks/DRB126-firstprivatesections-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB126-firstprivatesections-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB127-tasking-threadprivate1-orig-no
+SRC: micro-benchmarks/DRB127-tasking-threadprivate1-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB127-tasking-threadprivate1-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB128-tasking-threadprivate2-orig-no
+SRC: micro-benchmarks/DRB128-tasking-threadprivate2-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB128-tasking-threadprivate2-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB129-mergeable-taskwait-orig-yes
+SRC: micro-benchmarks/DRB129-mergeable-taskwait-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB129-mergeable-taskwait-orig-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB130-mergeable-taskwait-orig-no
+SRC: micro-benchmarks/DRB130-mergeable-taskwait-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB130-mergeable-taskwait-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB131-taskdep4-orig-omp45-yes
+SRC: micro-benchmarks/DRB131-taskdep4-orig-omp45-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 6
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB131-taskdep4-orig-omp45-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB131-taskdep4-orig-omp45-yes.c:24  R=1 W=0 total=1
+  micro-benchmarks/DRB131-taskdep4-orig-omp45-yes.c:25  R=1 W=1 total=2
+  micro-benchmarks/DRB131-taskdep4-orig-omp45-yes.c:27  R=1 W=0 total=1
+  micro-benchmarks/DRB131-taskdep4-orig-omp45-yes.c:28  R=1 W=1 total=2
+  micro-benchmarks/DRB131-taskdep4-orig-omp45-yes.c:33  R=1 W=0 total=1
+  micro-benchmarks/DRB131-taskdep4-orig-omp45-yes.c:34  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB132-taskdep4-orig-omp45-no
+SRC: micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 6
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB132-taskdep4-orig-omp45-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c:22  R=1 W=0 total=1
+  micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c:23  R=1 W=1 total=2
+  micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c:25  R=1 W=0 total=1
+  micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c:26  R=1 W=1 total=2
+  micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c:31  R=1 W=0 total=1
+  micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c:35  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB133-taskdep5-orig-omp45-no
+SRC: micro-benchmarks/DRB133-taskdep5-orig-omp45-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB133-taskdep5-orig-omp45-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB133-taskdep5-orig-omp45-no.c:27  R=1 W=0 total=1
+  micro-benchmarks/DRB133-taskdep5-orig-omp45-no.c:28  R=2 W=1 total=3
+  micro-benchmarks/DRB133-taskdep5-orig-omp45-no.c:37  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB134-taskdep5-orig-omp45-yes
+SRC: micro-benchmarks/DRB134-taskdep5-orig-omp45-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 5
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB134-taskdep5-orig-omp45-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB134-taskdep5-orig-omp45-yes.c:24  R=1 W=0 total=1
+  micro-benchmarks/DRB134-taskdep5-orig-omp45-yes.c:25  R=1 W=1 total=2
+  micro-benchmarks/DRB134-taskdep5-orig-omp45-yes.c:27  R=1 W=0 total=1
+  micro-benchmarks/DRB134-taskdep5-orig-omp45-yes.c:28  R=2 W=1 total=3
+  micro-benchmarks/DRB134-taskdep5-orig-omp45-yes.c:33  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB135-taskdep-mutexinoutset-orig-no
+SRC: micro-benchmarks/DRB135-taskdep-mutexinoutset-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 9
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB135-taskdep-mutexinoutset-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB135-taskdep-mutexinoutset-orig-no.c:26  R=1 W=0 total=1
+  micro-benchmarks/DRB135-taskdep-mutexinoutset-orig-no.c:28  R=1 W=0 total=1
+  micro-benchmarks/DRB135-taskdep-mutexinoutset-orig-no.c:30  R=1 W=0 total=1
+  micro-benchmarks/DRB135-taskdep-mutexinoutset-orig-no.c:33  R=2 W=1 total=3
+  micro-benchmarks/DRB135-taskdep-mutexinoutset-orig-no.c:34  R=1 W=0 total=1
+  micro-benchmarks/DRB135-taskdep-mutexinoutset-orig-no.c:35  R=2 W=1 total=3
+  micro-benchmarks/DRB135-taskdep-mutexinoutset-orig-no.c:36  R=1 W=0 total=1
+  micro-benchmarks/DRB135-taskdep-mutexinoutset-orig-no.c:37  R=1 W=0 total=1
+  micro-benchmarks/DRB135-taskdep-mutexinoutset-orig-no.c:40  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB136-taskdep-mutexinoutset-orig-yes
+SRC: micro-benchmarks/DRB136-taskdep-mutexinoutset-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 8
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB136-taskdep-mutexinoutset-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB136-taskdep-mutexinoutset-orig-yes.c:25  R=1 W=0 total=1
+  micro-benchmarks/DRB136-taskdep-mutexinoutset-orig-yes.c:27  R=1 W=0 total=1
+  micro-benchmarks/DRB136-taskdep-mutexinoutset-orig-yes.c:29  R=1 W=0 total=1
+  micro-benchmarks/DRB136-taskdep-mutexinoutset-orig-yes.c:31  R=1 W=0 total=1
+  micro-benchmarks/DRB136-taskdep-mutexinoutset-orig-yes.c:32  R=1 W=1 total=2
+  micro-benchmarks/DRB136-taskdep-mutexinoutset-orig-yes.c:33  R=1 W=0 total=1
+  micro-benchmarks/DRB136-taskdep-mutexinoutset-orig-yes.c:34  R=2 W=1 total=3
+  micro-benchmarks/DRB136-taskdep-mutexinoutset-orig-yes.c:36  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB137-simdsafelen-orig-no
+SRC: micro-benchmarks/DRB137-simdsafelen-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB137-simdsafelen-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB138-simdsafelen-orig-yes
+SRC: micro-benchmarks/DRB138-simdsafelen-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB138-simdsafelen-orig-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB139-worksharingcritical-orig-no
+SRC: micro-benchmarks/DRB139-worksharingcritical-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB139-worksharingcritical-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB140-reduction-barrier-orig-yes
+SRC: micro-benchmarks/DRB140-reduction-barrier-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB140-reduction-barrier-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB140-reduction-barrier-orig-yes.c:27  R=3 W=3 total=6
+  micro-benchmarks/DRB140-reduction-barrier-orig-yes.c:33  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB141-reduction-barrier-orig-no
+SRC: micro-benchmarks/DRB141-reduction-barrier-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB141-reduction-barrier-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB141-reduction-barrier-orig-no.c:30  R=4 W=4 total=8
+  micro-benchmarks/DRB141-reduction-barrier-orig-no.c:36  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB142-acquirerelease-orig-yes
+SRC: micro-benchmarks/DRB142-acquirerelease-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB142-acquirerelease-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB142-acquirerelease-orig-yes.c:41  R=1 W=0 total=1
+  micro-benchmarks/DRB142-acquirerelease-orig-yes.c:44  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB143-acquirerelease-orig-no
+SRC: micro-benchmarks/DRB143-acquirerelease-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB143-acquirerelease-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB143-acquirerelease-orig-no.c:37  R=1 W=0 total=1
+  micro-benchmarks/DRB143-acquirerelease-orig-no.c:40  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB144-critical-missingreduction-orig-gpu-yes
+SRC: micro-benchmarks/DRB144-critical-missingreduction-orig-gpu-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB144-critical-missingreduction-orig-gpu-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB144-critical-missingreduction-orig-gpu-yes.c:26  R=150 W=150 total=300
+  micro-benchmarks/DRB144-critical-missingreduction-orig-gpu-yes.c:29  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB145-atomiccritical-orig-gpu-no
+SRC: micro-benchmarks/DRB145-atomiccritical-orig-gpu-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 1
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB145-atomiccritical-orig-gpu-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB145-atomiccritical-orig-gpu-no.c:23  R=4 W=3 total=7
+
+============================================================
+BENCHMARK: DRB146-atomicupdate-orig-gpu-no
+SRC: micro-benchmarks/DRB146-atomicupdate-orig-gpu-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB146-atomicupdate-orig-gpu-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB147-critical1-orig-gpu-no
+SRC: micro-benchmarks/DRB147-critical1-orig-gpu-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB147-critical1-orig-gpu-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB148-critical1-orig-gpu-yes
+SRC: micro-benchmarks/DRB148-critical1-orig-gpu-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB148-critical1-orig-gpu-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB148-critical1-orig-gpu-yes.c:31  R=75 W=75 total=150
+  micro-benchmarks/DRB148-critical1-orig-gpu-yes.c:34  R=75 W=75 total=150
+  micro-benchmarks/DRB148-critical1-orig-gpu-yes.c:37  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB149-missingdata1-orig-gpu-no
+SRC: micro-benchmarks/DRB149-missingdata1-orig-gpu-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB149-missingdata1-orig-gpu-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB150-missinglock1-orig-gpu-yes
+SRC: micro-benchmarks/DRB150-missinglock1-orig-gpu-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB150-missinglock1-orig-gpu-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB150-missinglock1-orig-gpu-yes.c:30  R=75 W=75 total=150
+  micro-benchmarks/DRB150-missinglock1-orig-gpu-yes.c:36  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB151-missinglock3-orig-gpu-yes
+SRC: micro-benchmarks/DRB151-missinglock3-orig-gpu-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB151-missinglock3-orig-gpu-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB151-missinglock3-orig-gpu-yes.c:26  R=75 W=75 total=150
+  micro-benchmarks/DRB151-missinglock3-orig-gpu-yes.c:29  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB152-missinglock2-orig-gpu-no
+SRC: micro-benchmarks/DRB152-missinglock2-orig-gpu-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB152-missinglock2-orig-gpu-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB152-missinglock2-orig-gpu-no.c:28  R=75 W=75 total=150
+  micro-benchmarks/DRB152-missinglock2-orig-gpu-no.c:33  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB153-missinglock2-orig-gpu-yes
+SRC: micro-benchmarks/DRB153-missinglock2-orig-gpu-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB153-missinglock2-orig-gpu-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB153-missinglock2-orig-gpu-yes.c:28  R=75 W=75 total=150
+  micro-benchmarks/DRB153-missinglock2-orig-gpu-yes.c:31  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB154-missinglock3-orig-gpu-no
+SRC: micro-benchmarks/DRB154-missinglock3-orig-gpu-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB154-missinglock3-orig-gpu-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB155-missingordered-orig-gpu-no
+SRC: micro-benchmarks/DRB155-missingordered-orig-gpu-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB155-missingordered-orig-gpu-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB155-missingordered-orig-gpu-no.c:33  R=74 W=74 total=148
+  micro-benchmarks/DRB155-missingordered-orig-gpu-no.c:38  R=75 W=0 total=75
+
+============================================================
+BENCHMARK: DRB156-missingordered-orig-gpu-yes
+SRC: micro-benchmarks/DRB156-missingordered-orig-gpu-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB156-missingordered-orig-gpu-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB156-missingordered-orig-gpu-yes.c:28  R=74 W=74 total=148
+  micro-benchmarks/DRB156-missingordered-orig-gpu-yes.c:32  R=27 W=0 total=27
+
+============================================================
+BENCHMARK: DRB157-missingorderedsimd-orig-gpu-yes
+SRC: micro-benchmarks/DRB157-missingorderedsimd-orig-gpu-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB157-missingorderedsimd-orig-gpu-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB157-missingorderedsimd-orig-gpu-yes.c:33  R=63 W=63 total=126
+  micro-benchmarks/DRB157-missingorderedsimd-orig-gpu-yes.c:36  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB158-missingtaskbarrier-orig-gpu-no
+SRC: micro-benchmarks/DRB158-missingtaskbarrier-orig-gpu-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB158-missingtaskbarrier-orig-gpu-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB159-nobarrier-orig-gpu-no
+SRC: micro-benchmarks/DRB159-nobarrier-orig-gpu-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB159-nobarrier-orig-gpu-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB159-nobarrier-orig-gpu-no.c:41  R=1398 W=798 total=2196
+  micro-benchmarks/DRB159-nobarrier-orig-gpu-no.c:46  R=1600 W=800 total=2400
+  micro-benchmarks/DRB159-nobarrier-orig-gpu-no.c:59  R=8 W=0 total=8
+
+============================================================
+BENCHMARK: DRB160-nobarrier-orig-gpu-yes
+SRC: micro-benchmarks/DRB160-nobarrier-orig-gpu-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB160-nobarrier-orig-gpu-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB161-nolocksimd-orig-gpu-yes
+SRC: micro-benchmarks/DRB161-nolocksimd-orig-gpu-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB161-nolocksimd-orig-gpu-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB161-nolocksimd-orig-gpu-yes.c:33  R=120 W=120 total=240
+  micro-benchmarks/DRB161-nolocksimd-orig-gpu-yes.c:38  R=8 W=0 total=8
+
+============================================================
+BENCHMARK: DRB162-nolocksimd-orig-gpu-no
+SRC: micro-benchmarks/DRB162-nolocksimd-orig-gpu-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB162-nolocksimd-orig-gpu-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB162-nolocksimd-orig-gpu-no.c:27  R=24 W=24 total=48
+  micro-benchmarks/DRB162-nolocksimd-orig-gpu-no.c:36  R=8 W=0 total=8
+
+============================================================
+BENCHMARK: DRB163-simdmissinglock1-orig-gpu-no
+SRC: micro-benchmarks/DRB163-simdmissinglock1-orig-gpu-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 1
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB163-simdmissinglock1-orig-gpu-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB163-simdmissinglock1-orig-gpu-no.c:27  R=320 W=256 total=576
+
+============================================================
+BENCHMARK: DRB164-simdmissinglock1-orig-gpu-yes
+SRC: micro-benchmarks/DRB164-simdmissinglock1-orig-gpu-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB164-simdmissinglock1-orig-gpu-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB164-simdmissinglock1-orig-gpu-yes.c:35  R=6016 W=6016 total=12032
+  micro-benchmarks/DRB164-simdmissinglock1-orig-gpu-yes.c:39  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB165-taskdep4-orig-omp50-yes
+SRC: micro-benchmarks/DRB165-taskdep4-orig-omp50-yes.c
+OPENMP: yes
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB165-taskdep4-orig-omp50-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB166-taskdep4-orig-omp50-no
+SRC: micro-benchmarks/DRB166-taskdep4-orig-omp50-no.c
+OPENMP: yes
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB166-taskdep4-orig-omp50-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB167-taskdep4-orig-omp50-no
+SRC: micro-benchmarks/DRB167-taskdep4-orig-omp50-no.c
+OPENMP: yes
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB167-taskdep4-orig-omp50-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB168-taskdep5-orig-omp50-yes
+SRC: micro-benchmarks/DRB168-taskdep5-orig-omp50-yes.c
+OPENMP: yes
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB168-taskdep5-orig-omp50-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB169-missingsyncwrite-orig-yes
+SRC: micro-benchmarks/DRB169-missingsyncwrite-orig-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB169-missingsyncwrite-orig-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB169-missingsyncwrite-orig-yes.c:38  R=821 W=213 total=1034
+  micro-benchmarks/DRB169-missingsyncwrite-orig-yes.c:43  R=8 W=0 total=8
+
+============================================================
+BENCHMARK: DRB170-nestedloops-orig-no
+SRC: micro-benchmarks/DRB170-nestedloops-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 1
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB170-nestedloops-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB170-nestedloops-orig-no.c:30  R=1669 W=0 total=1669
+
+============================================================
+BENCHMARK: DRB171-threadprivate3-orig-no
+SRC: micro-benchmarks/DRB171-threadprivate3-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB171-threadprivate3-orig-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB172-critical2-orig-no
+SRC: micro-benchmarks/DRB172-critical2-orig-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB172-critical2-orig-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB172-critical2-orig-no.c:29  R=14 W=7 total=21
+  micro-benchmarks/DRB172-critical2-orig-no.c:33  R=4 W=4 total=8
+  micro-benchmarks/DRB172-critical2-orig-no.c:38  R=1 W=1 total=2
+  micro-benchmarks/DRB172-critical2-orig-no.c:43  R=14 W=0 total=14
+
+============================================================
+BENCHMARK: DRB173-non-sibling-taskdep-yes
+SRC: micro-benchmarks/DRB173-non-sibling-taskdep-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 6
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB173-non-sibling-taskdep-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB173-non-sibling-taskdep-yes.c:27  R=1 W=0 total=1
+  micro-benchmarks/DRB173-non-sibling-taskdep-yes.c:29  R=1 W=0 total=1
+  micro-benchmarks/DRB173-non-sibling-taskdep-yes.c:30  R=1 W=1 total=2
+  micro-benchmarks/DRB173-non-sibling-taskdep-yes.c:35  R=1 W=0 total=1
+  micro-benchmarks/DRB173-non-sibling-taskdep-yes.c:36  R=1 W=1 total=2
+  micro-benchmarks/DRB173-non-sibling-taskdep-yes.c:40  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB174-non-sibling-taskdep-no
+SRC: micro-benchmarks/DRB174-non-sibling-taskdep-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB174-non-sibling-taskdep-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB174-non-sibling-taskdep-no.c:37  R=1 W=0 total=1
+  micro-benchmarks/DRB174-non-sibling-taskdep-no.c:38  R=2 W=1 total=3
+  micro-benchmarks/DRB174-non-sibling-taskdep-no.c:43  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB175-non-sibling-taskdep2-yes
+SRC: micro-benchmarks/DRB175-non-sibling-taskdep2-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB175-non-sibling-taskdep2-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB175-non-sibling-taskdep2-yes.c:27  R=3 W=0 total=3
+  micro-benchmarks/DRB175-non-sibling-taskdep2-yes.c:28  R=2 W=2 total=4
+  micro-benchmarks/DRB175-non-sibling-taskdep2-yes.c:30  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB176-fib-taskdep-no
+SRC: micro-benchmarks/DRB176-fib-taskdep-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 7
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB176-fib-taskdep-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB176-fib-taskdep-no.c:22  R=9 W=0 total=9
+  micro-benchmarks/DRB176-fib-taskdep-no.c:23  R=13 W=3 total=16
+  micro-benchmarks/DRB176-fib-taskdep-no.c:24  R=3 W=0 total=3
+  micro-benchmarks/DRB176-fib-taskdep-no.c:25  R=3 W=1 total=4
+  micro-benchmarks/DRB176-fib-taskdep-no.c:26  R=12 W=0 total=12
+  micro-benchmarks/DRB176-fib-taskdep-no.c:27  R=48 W=7 total=55
+  micro-benchmarks/DRB176-fib-taskdep-no.c:29  R=10 W=0 total=10
+
+============================================================
+BENCHMARK: DRB177-fib-taskdep-yes
+SRC: micro-benchmarks/DRB177-fib-taskdep-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 7
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB177-fib-taskdep-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB177-fib-taskdep-yes.c:24  R=9 W=0 total=9
+  micro-benchmarks/DRB177-fib-taskdep-yes.c:25  R=10 W=4 total=14
+  micro-benchmarks/DRB177-fib-taskdep-yes.c:26  R=4 W=0 total=4
+  micro-benchmarks/DRB177-fib-taskdep-yes.c:27  R=4 W=3 total=7
+  micro-benchmarks/DRB177-fib-taskdep-yes.c:28  R=8 W=1 total=9
+  micro-benchmarks/DRB177-fib-taskdep-yes.c:29  R=12 W=6 total=18
+  micro-benchmarks/DRB177-fib-taskdep-yes.c:31  R=16 W=0 total=16
+
+============================================================
+BENCHMARK: DRB178-input-dependence-var-yes
+SRC: micro-benchmarks/DRB178-input-dependence-var-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB178-input-dependence-var-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB178-input-dependence-var-yes.c:41  R=3 W=0 total=3
+  micro-benchmarks/DRB178-input-dependence-var-yes.c:42  R=75 W=75 total=150
+  micro-benchmarks/DRB178-input-dependence-var-yes.c:43  R=75 W=0 total=75
+  micro-benchmarks/DRB178-input-dependence-var-yes.c:49  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB179-thread-sensitivity-yes
+SRC: micro-benchmarks/DRB179-thread-sensitivity-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB179-thread-sensitivity-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB179-thread-sensitivity-yes.c:30  R=3 W=0 total=3
+  micro-benchmarks/DRB179-thread-sensitivity-yes.c:31  R=75 W=0 total=75
+  micro-benchmarks/DRB179-thread-sensitivity-yes.c:38  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB180-miniAMR-yes
+SRC: micro-benchmarks/DRB180-miniAMR-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB180-miniAMR-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB181-SmithWaterman-yes
+SRC: micro-benchmarks/DRB181-SmithWaterman-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB181-SmithWaterman-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB182-atomic3-no
+SRC: micro-benchmarks/DRB182-atomic3-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB182-atomic3-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB182-atomic3-no.c:34  R=1 W=0 total=1
+  micro-benchmarks/DRB182-atomic3-no.c:36  R=0 W=1 total=1
+  micro-benchmarks/DRB182-atomic3-no.c:39  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB183-atomic3-yes
+SRC: micro-benchmarks/DRB183-atomic3-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB183-atomic3-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB183-atomic3-yes.c:34  R=1 W=0 total=1
+  micro-benchmarks/DRB183-atomic3-yes.c:36  R=0 W=1 total=1
+  micro-benchmarks/DRB183-atomic3-yes.c:39  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB184-barrier1-no
+SRC: micro-benchmarks/DRB184-barrier1-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB184-barrier1-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB185-barrier1-yes
+SRC: micro-benchmarks/DRB185-barrier1-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 11
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB185-barrier1-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB185-barrier1-yes.c:37  R=8 W=0 total=8
+  micro-benchmarks/DRB185-barrier1-yes.c:38  R=0 W=8 total=8
+  micro-benchmarks/DRB185-barrier1-yes.c:48  R=8 W=0 total=8
+  micro-benchmarks/DRB185-barrier1-yes.c:50  R=0 W=8 total=8
+  micro-benchmarks/DRB185-barrier1-yes.c:80  R=3 W=0 total=3
+  micro-benchmarks/DRB185-barrier1-yes.c:81  R=3 W=0 total=3
+  micro-benchmarks/DRB185-barrier1-yes.c:85  R=0 W=2 total=2
+  micro-benchmarks/DRB185-barrier1-yes.c:87  R=4 W=0 total=4
+  micro-benchmarks/DRB185-barrier1-yes.c:88  R=4 W=0 total=4
+  micro-benchmarks/DRB185-barrier1-yes.c:92  R=0 W=2 total=2
+  micro-benchmarks/DRB185-barrier1-yes.c:96  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB186-barrier2-no
+SRC: micro-benchmarks/DRB186-barrier2-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB186-barrier2-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB186-barrier2-no.c:49  R=0 W=1 total=1
+  micro-benchmarks/DRB186-barrier2-no.c:58  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB187-barrier2-yes
+SRC: micro-benchmarks/DRB187-barrier2-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB187-barrier2-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB187-barrier2-yes.c:51  R=0 W=1 total=1
+  micro-benchmarks/DRB187-barrier2-yes.c:60  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB188-barrier3-no
+SRC: micro-benchmarks/DRB188-barrier3-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 9
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB188-barrier3-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB188-barrier3-no.c:97  R=199 W=0 total=199
+  micro-benchmarks/DRB188-barrier3-no.c:98  R=199 W=0 total=199
+  micro-benchmarks/DRB188-barrier3-no.c:99  R=200 W=0 total=200
+  micro-benchmarks/DRB188-barrier3-no.c:102  R=0 W=100 total=100
+  micro-benchmarks/DRB188-barrier3-no.c:104  R=200 W=0 total=200
+  micro-benchmarks/DRB188-barrier3-no.c:105  R=200 W=0 total=200
+  micro-benchmarks/DRB188-barrier3-no.c:106  R=200 W=0 total=200
+  micro-benchmarks/DRB188-barrier3-no.c:109  R=0 W=100 total=100
+  micro-benchmarks/DRB188-barrier3-no.c:116  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB189-barrier3-yes
+SRC: micro-benchmarks/DRB189-barrier3-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 7
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB189-barrier3-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB189-barrier3-yes.c:99  R=3 W=0 total=3
+  micro-benchmarks/DRB189-barrier3-yes.c:100  R=3 W=0 total=3
+  micro-benchmarks/DRB189-barrier3-yes.c:104  R=0 W=2 total=2
+  micro-benchmarks/DRB189-barrier3-yes.c:106  R=4 W=0 total=4
+  micro-benchmarks/DRB189-barrier3-yes.c:107  R=4 W=0 total=4
+  micro-benchmarks/DRB189-barrier3-yes.c:111  R=0 W=2 total=2
+  micro-benchmarks/DRB189-barrier3-yes.c:118  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB190-critical-section2-no
+SRC: micro-benchmarks/DRB190-critical-section2-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB190-critical-section2-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB191-critical-section2-yes
+SRC: micro-benchmarks/DRB191-critical-section2-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB191-critical-section2-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB192-critical-section3-no
+SRC: micro-benchmarks/DRB192-critical-section3-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB192-critical-section3-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB192-critical-section3-no.c:38  R=1 W=0 total=1
+  micro-benchmarks/DRB192-critical-section3-no.c:42  R=0 W=1 total=1
+  micro-benchmarks/DRB192-critical-section3-no.c:45  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB193-critical-section3-yes
+SRC: micro-benchmarks/DRB193-critical-section3-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB193-critical-section3-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB193-critical-section3-yes.c:40  R=1 W=0 total=1
+  micro-benchmarks/DRB193-critical-section3-yes.c:44  R=0 W=1 total=1
+  micro-benchmarks/DRB193-critical-section3-yes.c:47  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB194-diffusion1-no
+SRC: micro-benchmarks/DRB194-diffusion1-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 9
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB194-diffusion1-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB194-diffusion1-no.c:33  R=39 W=0 total=39
+  micro-benchmarks/DRB194-diffusion1-no.c:35  R=741 W=69 total=810
+  micro-benchmarks/DRB194-diffusion1-no.c:37  R=10 W=0 total=10
+  micro-benchmarks/DRB194-diffusion1-no.c:38  R=10 W=10 total=20
+  micro-benchmarks/DRB194-diffusion1-no.c:39  R=0 W=10 total=10
+  micro-benchmarks/DRB194-diffusion1-no.c:41  R=11 W=0 total=11
+  micro-benchmarks/DRB194-diffusion1-no.c:42  R=18 W=0 total=18
+  micro-benchmarks/DRB194-diffusion1-no.c:44  R=1 W=0 total=1
+  micro-benchmarks/DRB194-diffusion1-no.c:45  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB195-diffusion1-yes
+SRC: micro-benchmarks/DRB195-diffusion1-yes.c
+OPENMP: yes
+STATUS: RUNTIME_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB195-diffusion1-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB196-diffusion2-no
+SRC: micro-benchmarks/DRB196-diffusion2-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 5
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB196-diffusion2-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB196-diffusion2-no.c:34  R=399 W=0 total=399
+  micro-benchmarks/DRB196-diffusion2-no.c:36  R=25338 W=1399 total=26737
+  micro-benchmarks/DRB196-diffusion2-no.c:38  R=100 W=100 total=200
+  micro-benchmarks/DRB196-diffusion2-no.c:40  R=21 W=0 total=21
+  micro-benchmarks/DRB196-diffusion2-no.c:41  R=55 W=0 total=55
+
+============================================================
+BENCHMARK: DRB197-diffusion2-yes
+SRC: micro-benchmarks/DRB197-diffusion2-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 5
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB197-diffusion2-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB197-diffusion2-yes.c:36  R=399 W=0 total=399
+  micro-benchmarks/DRB197-diffusion2-yes.c:38  R=25541 W=1448 total=26989
+  micro-benchmarks/DRB197-diffusion2-yes.c:40  R=100 W=100 total=200
+  micro-benchmarks/DRB197-diffusion2-yes.c:42  R=21 W=0 total=21
+  micro-benchmarks/DRB197-diffusion2-yes.c:43  R=55 W=0 total=55
+
+============================================================
+BENCHMARK: DRB198-prodcons-no
+SRC: micro-benchmarks/DRB198-prodcons-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB198-prodcons-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB199-prodcons-yes
+SRC: micro-benchmarks/DRB199-prodcons-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB199-prodcons-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB200-sync1-no
+SRC: micro-benchmarks/DRB200-sync1-no.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB200-sync1-no
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB200-sync1-no.c:42  R=0 W=1 total=1
+  micro-benchmarks/DRB200-sync1-no.c:47  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB201-sync1-yes
+SRC: micro-benchmarks/DRB201-sync1-yes.c
+OPENMP: yes
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 2
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB201-sync1-yes
+
+Shared lines (unique, with R/W counts):
+  micro-benchmarks/DRB201-sync1-yes.c:42  R=0 W=1 total=1
+  micro-benchmarks/DRB201-sync1-yes.c:47  R=1 W=0 total=1
+
+============================================================
+BENCHMARK: DRB202-simd-broadcast-yes
+SRC: micro-benchmarks/DRB202-simd-broadcast-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB202-simd-broadcast-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB203-simd-broadcast-no
+SRC: micro-benchmarks/DRB203-simd-broadcast-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB203-simd-broadcast-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB204-simd-gather-yes
+SRC: micro-benchmarks/DRB204-simd-gather-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB204-simd-gather-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB205-simd-gatherscatter-no
+SRC: micro-benchmarks/DRB205-simd-gatherscatter-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB205-simd-gatherscatter-no
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB206-simd-scatter-yes
+SRC: micro-benchmarks/DRB206-simd-scatter-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB206-simd-scatter-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB207-simd-loadstore-yes
+SRC: micro-benchmarks/DRB207-simd-loadstore-yes.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB207-simd-loadstore-yes
+
+Shared lines: (none)
+
+============================================================
+BENCHMARK: DRB208-simd-loadstore-no
+SRC: micro-benchmarks/DRB208-simd-loadstore-no.c
+OPENMP: yes
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/dataracebench/DynamicAnalysis_results/DRB208-simd-loadstore-no
+
+Shared lines: (none)
+

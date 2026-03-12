@@ -1,0 +1,549 @@
+DynamicAnalysis Summary (SCTBench/test)
+Time: Thu Mar  5 17:08:38 CST 2026
+SCT_ROOT: /mnt/d/git/sctbench
+TEST_DIR: /mnt/d/git/sctbench/test
+OUT_ROOT: /mnt/d/git/sctbench/DynamicAnalysis_results_test
+PASS_HOME: /home/zj/llvm-pass-demo
+PASS_SO: /home/zj/llvm-pass-demo/libMemInst.so
+RUNTIME_SO: /home/zj/llvm-pass-demo/libruntime.so
+CLANG: clang-10
+CLANGXX: clang++-10
+OPT: opt-10
+TIMEOUT_SEC: 20
+OMP_NUM_THREADS(default): 4
+EXTRA_ARGS: 
+SELECT_LIST: <none>
+
+============================================================
+PROGRAM: InterlockedWorkStealQueue
+SRC: InterlockedWorkStealQueue.cpp
+LANG: C++
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/InterlockedWorkStealQueue
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: InterlockedWorkStealQueueWithState
+SRC: InterlockedWorkStealQueueWithState.cpp
+LANG: C++
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/InterlockedWorkStealQueueWithState
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: StateWorkStealQueue
+SRC: StateWorkStealQueue.cpp
+LANG: C++
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/StateWorkStealQueue
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: WorkStealQueue
+SRC: WorkStealQueue.cpp
+LANG: C++
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/WorkStealQueue
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: account_bad
+SRC: account_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/account_bad
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: arithmetic_prog_bad
+SRC: arithmetic_prog_bad.c
+LANG: C
+OPENMP: no
+STATUS: RUNTIME_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/arithmetic_prog_bad
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: bluetooth_driver_bad
+SRC: bluetooth_driver_bad.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/bluetooth_driver_bad
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: carter01_bad
+SRC: carter01_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/carter01_bad
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: circular_buffer_bad
+SRC: circular_buffer_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 14
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/circular_buffer_bad
+
+Shared access sites (unique, with R/W counts):
+  circular_buffer_bad.c:28  R=1 W=0 total=1
+  circular_buffer_bad.c:30  R=3 W=0 total=3
+  circular_buffer_bad.c:32  R=1 W=1 total=2
+  circular_buffer_bad.c:33  R=2 W=0 total=2
+  circular_buffer_bad.c:43  R=3 W=0 total=3
+  circular_buffer_bad.c:45  R=1 W=0 total=1
+  circular_buffer_bad.c:46  R=2 W=1 total=3
+  circular_buffer_bad.c:47  R=2 W=0 total=2
+  circular_buffer_bad.c:64  R=7 W=0 total=7
+  circular_buffer_bad.c:67  R=0 W=1 total=1
+  circular_buffer_bad.c:68  R=0 W=1 total=1
+  circular_buffer_bad.c:81  R=7 W=0 total=7
+  circular_buffer_bad.c:84  R=0 W=1 total=1
+  circular_buffer_bad.c:85  R=0 W=1 total=1
+
+============================================================
+PROGRAM: ctrace-test
+SRC: ctrace-test.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/ctrace-test
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: cvar
+SRC: cvar.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/cvar
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: deadlock01_bad
+SRC: deadlock01_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 1
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/deadlock01_bad
+
+Shared access sites (unique, with R/W counts):
+  deadlock01_bad.c:22  R=1 W=1 total=2
+
+============================================================
+PROGRAM: din_phil2_sat
+SRC: din_phil2_sat.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/din_phil2_sat
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: din_phil3_sat
+SRC: din_phil3_sat.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/din_phil3_sat
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: din_phil4_sat
+SRC: din_phil4_sat.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/din_phil4_sat
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: din_phil5_sat
+SRC: din_phil5_sat.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/din_phil5_sat
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: din_phil6_sat
+SRC: din_phil6_sat.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/din_phil6_sat
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: din_phil7_sat
+SRC: din_phil7_sat.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/din_phil7_sat
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: fsbench_bad
+SRC: fsbench_bad.c
+LANG: C
+OPENMP: no
+STATUS: RUNTIME_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/fsbench_bad
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: lazy01_bad
+SRC: lazy01_bad.c
+LANG: C
+OPENMP: no
+STATUS: RUNTIME_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/lazy01_bad
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: phase01_bad
+SRC: phase01_bad.c
+LANG: C
+OPENMP: no
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/phase01_bad
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: qsort_mt
+SRC: qsort_mt.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/qsort_mt
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: queue_bad
+SRC: queue_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 16
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/queue_bad
+
+Shared access sites (unique, with R/W counts):
+  queue_bad.c:33  R=2 W=0 total=2
+  queue_bad.c:55  R=2 W=0 total=2
+  queue_bad.c:56  R=2 W=2 total=4
+  queue_bad.c:57  R=2 W=0 total=2
+  queue_bad.c:63  R=2 W=2 total=4
+  queue_bad.c:73  R=2 W=0 total=2
+  queue_bad.c:74  R=1 W=1 total=2
+  queue_bad.c:75  R=1 W=0 total=1
+  queue_bad.c:80  R=1 W=1 total=2
+  queue_bad.c:99  R=19 W=0 total=19
+  queue_bad.c:104  R=0 W=1 total=1
+  queue_bad.c:105  R=0 W=1 total=1
+  queue_bad.c:120  R=20 W=0 total=20
+  queue_bad.c:122  R=1 W=0 total=1
+  queue_bad.c:123  R=0 W=1 total=1
+  queue_bad.c:124  R=0 W=1 total=1
+
+============================================================
+PROGRAM: reorder_10_bad
+SRC: reorder_10_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/reorder_10_bad
+
+Shared access sites (unique, with R/W counts):
+  reorder_bad.c:71  R=0 W=8 total=8
+  reorder_bad.c:72  R=0 W=8 total=8
+  reorder_bad.c:78  R=3 W=0 total=3
+
+============================================================
+PROGRAM: reorder_20_bad
+SRC: reorder_20_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/reorder_20_bad
+
+Shared access sites (unique, with R/W counts):
+  reorder_bad.c:71  R=0 W=9 total=9
+  reorder_bad.c:72  R=0 W=9 total=9
+  reorder_bad.c:78  R=30 W=0 total=30
+
+============================================================
+PROGRAM: reorder_3_bad
+SRC: reorder_3_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/reorder_3_bad
+
+Shared access sites (unique, with R/W counts):
+  reorder_bad.c:71  R=0 W=1 total=1
+  reorder_bad.c:72  R=0 W=1 total=1
+  reorder_bad.c:78  R=3 W=0 total=3
+
+============================================================
+PROGRAM: reorder_4_bad
+SRC: reorder_4_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/reorder_4_bad
+
+Shared access sites (unique, with R/W counts):
+  reorder_bad.c:71  R=0 W=2 total=2
+  reorder_bad.c:72  R=0 W=2 total=2
+  reorder_bad.c:78  R=3 W=0 total=3
+
+============================================================
+PROGRAM: reorder_5_bad
+SRC: reorder_5_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 3
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/reorder_5_bad
+
+Shared access sites (unique, with R/W counts):
+  reorder_bad.c:71  R=0 W=3 total=3
+  reorder_bad.c:72  R=0 W=3 total=3
+  reorder_bad.c:78  R=3 W=0 total=3
+
+============================================================
+PROGRAM: rwlock-test
+SRC: rwlock-test.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/rwlock-test
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: stack_bad
+SRC: stack_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/stack_bad
+
+Shared access sites (unique, with R/W counts):
+  stack_bad.c:24  R=10 W=10 total=20
+  stack_bad.c:29  R=20 W=0 total=20
+  stack_bad.c:62  R=10 W=0 total=10
+  stack_bad.c:87  R=10 W=0 total=10
+
+============================================================
+PROGRAM: sync01_bad
+SRC: sync01_bad.c
+LANG: C
+OPENMP: no
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/sync01_bad
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: sync02_bad
+SRC: sync02_bad.c
+LANG: C
+OPENMP: no
+STATUS: TIMEOUT
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/sync02_bad
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: test-ctxt
+SRC: test-ctxt.cpp
+LANG: C++
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/test-ctxt
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: test-js
+SRC: test-js.cpp
+LANG: C++
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/test-js
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: test
+SRC: test.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/test
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: threads
+SRC: threads.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/threads
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: token_ring_bad
+SRC: token_ring_bad.c
+LANG: C
+OPENMP: no
+STATUS: COMPILE_FAIL
+UNIQUE_SHARED_LINES: 0
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/token_ring_bad
+
+Shared access sites: (none)
+
+============================================================
+PROGRAM: twostage_100_bad
+SRC: twostage_100_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 13
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/twostage_100_bad
+
+Shared access sites (unique, with R/W counts):
+  twostage_bad.c:19  R=99 W=0 total=99
+  twostage_bad.c:20  R=0 W=98 total=98
+  twostage_bad.c:21  R=99 W=0 total=99
+  twostage_bad.c:23  R=99 W=0 total=99
+  twostage_bad.c:24  R=98 W=98 total=196
+  twostage_bad.c:25  R=99 W=0 total=99
+  twostage_bad.c:34  R=1 W=0 total=1
+  twostage_bad.c:35  R=1 W=0 total=1
+  twostage_bad.c:39  R=1 W=0 total=1
+  twostage_bad.c:40  R=1 W=0 total=1
+  twostage_bad.c:42  R=1 W=0 total=1
+  twostage_bad.c:43  R=1 W=0 total=1
+  twostage_bad.c:44  R=1 W=0 total=1
+
+============================================================
+PROGRAM: twostage_bad
+SRC: twostage_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 11
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/twostage_bad
+
+Shared access sites (unique, with R/W counts):
+  twostage_bad.c:19  R=1 W=0 total=1
+  twostage_bad.c:21  R=1 W=0 total=1
+  twostage_bad.c:23  R=1 W=0 total=1
+  twostage_bad.c:25  R=1 W=0 total=1
+  twostage_bad.c:34  R=1 W=0 total=1
+  twostage_bad.c:35  R=1 W=0 total=1
+  twostage_bad.c:39  R=1 W=0 total=1
+  twostage_bad.c:40  R=1 W=0 total=1
+  twostage_bad.c:42  R=1 W=0 total=1
+  twostage_bad.c:43  R=1 W=0 total=1
+  twostage_bad.c:44  R=1 W=0 total=1
+
+============================================================
+PROGRAM: wronglock_3_bad
+SRC: wronglock_3_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/wronglock_3_bad
+
+Shared access sites (unique, with R/W counts):
+  wronglock_bad.c:18  R=1 W=0 total=1
+  wronglock_bad.c:25  R=1 W=0 total=1
+  wronglock_bad.c:31  R=3 W=0 total=3
+  wronglock_bad.c:33  R=3 W=0 total=3
+
+============================================================
+PROGRAM: wronglock_bad
+SRC: wronglock_bad.c
+LANG: C
+OPENMP: no
+STATUS: OK_RUN
+UNIQUE_SHARED_LINES: 4
+OUT_DIR: /mnt/d/git/sctbench/DynamicAnalysis_results_test/wronglock_bad
+
+Shared access sites (unique, with R/W counts):
+  wronglock_bad.c:18  R=1 W=0 total=1
+  wronglock_bad.c:25  R=1 W=0 total=1
+  wronglock_bad.c:31  R=7 W=0 total=7
+  wronglock_bad.c:33  R=7 W=0 total=7
+
