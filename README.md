@@ -1,806 +1,378 @@
-\# DtTsa
+# DtTsa
 
+DtTsa is a synchronization-aware dynamic thread-sharing analysis for multithreaded C/C++ programs. It is implemented as an LLVM instrumentation pass together with a lightweight runtime library.
 
-
-DtTsa is a synchronization-aware dynamic thread-sharing analysis built on top of an LLVM instrumentation pass and a lightweight runtime library.  
-
-It instruments memory accesses together with key synchronization events, records execution traces during program runs, and reports source-level \*\*thread-sharing points\*\* that can be used for program understanding, concurrency debugging, and schedule-focused testing.
-
-
+DtTsa instruments memory accesses together with key synchronization events, records dynamic execution traces during program runs, and reports source-level thread-sharing points that can be used for program understanding, concurrency debugging, and schedule-focused testing.
 
 This repository contains:
 
-
-
-\- the LLVM pass implementation (`src/MemAccessInstrumentPass.cpp`)
-
-\- the runtime support library (`src/runtime.c`)
-
-\- the benchmark programs used in our evaluation (`evaluation/`)
-
-\- the analysis outputs produced by DtTsa on the three benchmark suites (`evaluation/results/`)
-
-
+- the LLVM pass implementation (`src/MemAccessInstrumentPass.cpp`)
+- the runtime support library (`src/runtime.c`)
+- the benchmark programs used in our evaluation (`evaluation/`)
+- the analysis outputs produced by DtTsa on three benchmark suites (`evaluation/results/`)
 
 ---
 
-
-
-\## Repository Layout
-
-
+## Repository Layout
 
 ```text
-
 DtTsa/
-
 ├── README.md
-
-├── .gitignore                 # recommended
-
-├── LICENSE                    # recommended
-
 ├── src/
-
 │   ├── MemAccessInstrumentPass.cpp
-
 │   └── runtime.c
-
 └── evaluation/
-
-&nbsp;   ├── CVE-Benchmark/         # benchmark sources (recommended unified naming)
-
-&nbsp;   ├── DataRaceBench/
-
-&nbsp;   ├── SCTBench/
-
-&nbsp;   └── results/
-
-&nbsp;       ├── CVE-Benchmark/
-
-&nbsp;       ├── DataRaceBench/
-
-&nbsp;       └── SCTBench/
-
+    ├── CVE-Benchmark/
+    ├── DataRaceBench/
+    ├── SCTBench/
+    └── results/
+        ├── CVE-Benchmark/
+        ├── DataRaceBench/
+        └── SCTBench/
 ```
 
-
-
-> \*\*Naming recommendation.\*\*  
-
-> For consistency, it is better to use the same dataset names everywhere:
-
-> `CVE-Benchmark`, `DataRaceBench`, and `SCTBench`.  
-
-> If your current local folders are named `dataracebench` / `sctbench`, consider renaming them before publication.
-
-
+- `src/` contains the core implementation of DtTsa.
+- `evaluation/` contains the benchmark subjects used in our experiments.
+- `evaluation/results/` contains the outputs produced by DtTsa on the three benchmark suites.
 
 ---
 
-
-
-\## What DtTsa Does
-
-
+## What DtTsa Does
 
 Given a multithreaded C/C++ program, DtTsa:
 
+1. compiles the program to LLVM bitcode;
+2. inserts instrumentation before memory accesses and synchronization operations;
+3. links the instrumented program with a runtime support library;
+4. records dynamic trace events during execution;
+5. aggregates the observed events across runs; and
+6. reports source-level thread-sharing points together with their frequency across runs.
 
-
-1\. compiles the program to LLVM bitcode,
-
-2\. inserts instrumentation before memory accesses and synchronization operations,
-
-3\. links the instrumented program with a runtime support library,
-
-4\. records dynamic trace events during execution,
-
-5\. aggregates the observed events across runs, and
-
-6\. reports \*\*source-level thread-sharing points\*\* together with their frequency across runs.
-
-
-
-DtTsa is designed to capture \*\*executed cross-thread sharing behavior\*\*, rather than only static may-share approximations or only racy access pairs.
-
-
+Unlike conservative static may-share analysis, DtTsa reports sharing behavior that is actually observed during execution. Unlike plain dynamic race detectors, DtTsa is designed to capture a broader class of concurrency-relevant sharing sites, including order-/state-sensitive accesses that may not appear as plain data races.
 
 ---
 
+## Environment Requirements
 
+DtTsa is intended to be built and used on Linux or WSL2.
 
-\## Environment Requirements
+### Required Tools
 
+- clang
+- clang++
+- llvm-config
+- opt
+- python3
+- standard Unix utilities such as bash, make, sed, grep, and awk
 
+### Suggested Environment
 
-The following environment is recommended:
+- Ubuntu 20.04 / 22.04, or WSL2 with Ubuntu
+- a consistent LLVM/Clang toolchain version for:
+  - clang / clang++
+  - opt
+  - llvm-config
 
-
-
-\- Linux or WSL2 (Ubuntu recommended)
-
-\- `clang` / `clang++`
-
-\- `llvm-config`
-
-\- `opt`
-
-\- `python3`
-
-\- standard Unix build tools (`bash`, `make`, `sed`, `grep`, `awk`, etc.)
-
-
-
-DtTsa is implemented as an LLVM pass plus a runtime library, so the LLVM toolchain version used to build the pass should match the version used to compile and instrument target programs.
-
-
-
-\### Suggested checks
-
-
+### Version Check
 
 ```bash
-
 clang --version
-
 clang++ --version
-
-llvm-config --version
-
 opt --version
-
+llvm-config --version
 python3 --version
-
 ```
 
-
+Important: the LLVM version used to build the pass should match the LLVM version used to instrument the target program.
 
 ---
 
+## Building DtTsa
 
-
-\## Building DtTsa
-
-
-
-\### 1. Build the LLVM instrumentation pass
-
-
+### 1. Build the LLVM Pass
 
 From the repository root:
 
-
-
 ```bash
-
-clang++ -fPIC -shared src/MemAccessInstrumentPass.cpp -o libMemAccessInstrumentPass.so \\
-
-&nbsp; `llvm-config --cxxflags --ldflags --system-libs --libs core passes`
-
+clang++ -fPIC -shared src/MemAccessInstrumentPass.cpp -o libMemAccessInstrumentPass.so \
+  `llvm-config --cxxflags --ldflags --system-libs --libs core passes`
 ```
 
-
-
-\### 2. Build the runtime library
-
-
+### 2. Build the Runtime Library
 
 ```bash
-
 clang -fPIC -shared src/runtime.c -o libruntime.so
-
 ```
 
+After successful compilation, the repository root should contain:
 
-
-After these two commands, the repository root should contain:
-
-
-
-\- `libMemAccessInstrumentPass.so`
-
-\- `libruntime.so`
-
-
+- `libMemAccessInstrumentPass.so`
+- `libruntime.so`
 
 ---
 
+## Input and Output
 
+### Input
 
-\## Input and Output
+DtTsa takes the following inputs:
 
+1. a multithreaded C/C++ program;
+2. LLVM bitcode generated from that program;
+3. one or more program runs, such as tests, benchmark drivers, or PoCs.
 
+At the repository level, the benchmark sources are organized under:
 
-\## Input
+- `evaluation/CVE-Benchmark/`
+- `evaluation/DataRaceBench/`
+- `evaluation/SCTBench/`
 
+### Output
 
+DtTsa produces dynamic-analysis outputs derived from runtime traces. Depending on the target program and benchmark setup, the output may include:
 
-DtTsa expects the following inputs:
+- raw trace logs;
+- intermediate per-run dynamic records;
+- merged source-level sharing summaries;
+- text, JSON, or other summarized results.
 
+The benchmark-level outputs included in this repository are stored under:
 
+- `evaluation/results/CVE-Benchmark/`
+- `evaluation/results/DataRaceBench/`
+- `evaluation/results/SCTBench/`
 
-1\. \*\*Program source code\*\* written in C/C++
-
-2\. \*\*LLVM bitcode\*\* generated from the program
-
-3\. \*\*Program executions\*\* (tests, PoCs, or benchmark drivers)
-
-
-
-At the repository level, the benchmark inputs are organized under:
-
-
-
-\- `evaluation/CVE-Benchmark/`
-
-\- `evaluation/DataRaceBench/`
-
-\- `evaluation/SCTBench/`
-
-
-
-\## Output
-
-
-
-DtTsa produces dynamic-analysis outputs derived from runtime traces.  
-
-Depending on the benchmark and run script, the output may include:
-
-
-
-\- raw trace logs
-
-\- merged or summarized sharing-point reports
-
-\- source-level access-site summaries
-
-\- JSON/TXT/CSV summaries used for evaluation
-
-
-
-The benchmark-level outputs are stored under:
-
-
-
-\- `evaluation/results/CVE-Benchmark/`
-
-\- `evaluation/results/DataRaceBench/`
-
-\- `evaluation/results/SCTBench/`
-
-
-
-At a minimum, the reported outputs identify the source locations involved in cross-thread sharing and, when applicable, the frequency with which they are observed across repeated runs.
-
-
+At a minimum, DtTsa reports source-level thread-sharing points observed during execution. When repeated runs are used, DtTsa can also summarize the frequency or stability of each reported site across runs.
 
 ---
 
+## How to Use DtTsa on a Single Program
 
+This section describes the generic workflow for applying DtTsa to a single program.
 
-\## Using DtTsa on a Single Program
-
-
-
-This section describes the generic workflow for running DtTsa on one program.
-
-
-
-\### Step 1. Compile the target program to LLVM bitcode
-
-
+### Step 1. Compile the Target Program to LLVM Bitcode
 
 For a C program:
 
-
-
 ```bash
-
 clang -O0 -g -emit-llvm -c target.c -o target.bc
-
 ```
-
-
 
 For a C++ program:
 
-
-
 ```bash
-
 clang++ -O0 -g -emit-llvm -c target.cpp -o target.bc
-
 ```
 
+If the target uses threads or OpenMP, add the corresponding flags during compilation and linking, for example:
 
+- `-pthread`
+- `-fopenmp`
 
-If the target uses threads or OpenMP, add the appropriate flags during both compilation and linking, for example:
+### Step 2. Instrument the Bitcode with DtTsa
 
+Use the DtTsa pass to transform the bitcode into an instrumented version.
 
+Depending on whether your pass is registered for the legacy pass manager or the new pass manager, use one of the following invocation styles.
 
-\- `-pthread`
-
-\- `-fopenmp`
-
-
-
-\### Step 2. Instrument the bitcode
-
-
-
-Use the DtTsa pass to instrument memory and synchronization events.
-
-
-
-Depending on whether your pass is implemented for the \*\*new pass manager\*\* or the \*\*legacy pass manager\*\*, use one of the following invocation styles.
-
-
-
-\#### New pass manager style
-
-
+#### New Pass Manager Style
 
 ```bash
-
-opt -load-pass-plugin ./libMemAccessInstrumentPass.so \\
-
-&nbsp;   -passes="<PASS\_NAME>" \\
-
-&nbsp;   target.bc -o target.inst.bc
-
+opt -load-pass-plugin ./libMemAccessInstrumentPass.so \
+    -passes="<PASS_NAME>" \
+    target.bc -o target.inst.bc
 ```
 
-
-
-\#### Legacy pass manager style
-
-
+#### Legacy Pass Manager Style
 
 ```bash
-
-opt -load ./libMemAccessInstrumentPass.so \\
-
-&nbsp;   -<PASS\_NAME> \\
-
-&nbsp;   target.bc -o target.inst.bc
-
+opt -load ./libMemAccessInstrumentPass.so \
+    -<PASS_NAME> \
+    target.bc -o target.inst.bc
 ```
 
+Replace `<PASS_NAME>` with the actual pass name registered in `src/MemAccessInstrumentPass.cpp`.
 
+### Step 3. Link the Instrumented Bitcode with the Runtime Library
 
-> Replace `<PASS\_NAME>` with the pass name registered in `src/MemAccessInstrumentPass.cpp`.
-
-
-
-\### Step 3. Link the instrumented program with the runtime library
-
-
-
-For a C program:
-
-
+For a C target:
 
 ```bash
-
 clang target.inst.bc -L. -lruntime -Wl,-rpath,. -o target.inst
-
 ```
 
-
-
-For a C++ program:
-
-
+For a C++ target:
 
 ```bash
-
 clang++ target.inst.bc -L. -lruntime -Wl,-rpath,. -o target.inst
-
 ```
-
-
 
 If needed, also add `-pthread` and/or `-fopenmp`.
 
-
-
-\### Step 4. Run the instrumented executable
-
-
+### Step 4. Run the Instrumented Executable
 
 ```bash
-
 ./target.inst
-
 ```
 
-
-
-Or, if the program requires arguments:
-
-
+If the program requires command-line arguments:
 
 ```bash
-
 ./target.inst <program-arguments>
-
 ```
 
+### Step 5. Inspect the Output
 
+After execution, DtTsa emits runtime-generated dynamic-analysis outputs. Depending on the current implementation of `runtime.c`, these outputs may be written as trace files, text logs, or merged summaries.
 
-\### Step 5. Collect and inspect outputs
+If your current implementation uses fixed output filenames, document them here explicitly. For example:
 
+- `memtrace.log`
+- `thread_accesses.json`
+- `summary_pairs.txt`
 
-
-The exact output filenames depend on your runtime implementation and experimental scripts, but the expected workflow is:
-
-
-
-\- run the instrumented program once or repeatedly,
-
-\- let the runtime emit dynamic trace data,
-
-\- post-process the collected traces into source-level thread-sharing points,
-
-\- place the final summaries under `evaluation/results/...`.
-
-
+If the filenames vary by benchmark, describe the naming convention used in `evaluation/results/`.
 
 ---
 
+## Repeated Runs and Union Aggregation
 
+Many concurrency behaviors depend on scheduling and input diversity. DtTsa is therefore intended to support repeated runs of the same program.
 
-\## Repeated Runs and Union Aggregation
+For a subject program `p`, repeated runs produce per-run sharing sets:
 
+`P1, P2, ..., PN`
 
+The final reported dynamic sharing set is the union across runs:
 
-DtTsa is intended to be run multiple times when the benchmark behavior depends on scheduling or input diversity.
+`P_dyn(p) = union of Pi over all runs`
 
-
-
-For a subject program \\(p\\), repeated runs produce per-run sharing sets:
-
-
-
-\\\[
-
-P\_1, P\_2, \\ldots, P\_N
-
-\\]
-
-
-
-The final reported set is the union across runs:
-
-
-
-\\\[
-
-P\_{\\mathrm{dyn}}(p) = \\bigcup\_{i=1}^{N} P\_i
-
-\\]
-
-
-
-In addition, DtTsa can track how often a source-level sharing point appears across repeated runs and report a stability/frequency measure. This is useful for separating consistently observed sharing sites from rare schedule-sensitive ones.
-
-
+DtTsa may also track how frequently a reported sharing point appears across runs. This is useful for distinguishing highly stable thread-sharing points from rare schedule-sensitive ones.
 
 ---
 
+## Benchmark Suites Included in This Repository
 
+This repository includes three benchmark suites used in our evaluation.
 
-\## Benchmark Suites Included in This Repository
-
-
-
-This repository is organized around three benchmark families.
-
-
-
-\### 1. CVE-Benchmark
-
-
+### 1. CVE-Benchmark
 
 `evaluation/CVE-Benchmark/`
 
+This suite contains real-world concurrency-related vulnerability subjects. It is used to evaluate whether DtTsa can recover source-level sharing sites that are relevant to known bug-triggering interleavings under available PoCs or test drivers.
 
-
-This benchmark suite contains real-world concurrency-related vulnerability subjects.  
-
-The goal here is to test whether DtTsa can recover source-level sharing points that are relevant to known bug-triggering interleavings under available PoCs or test drivers.
-
-
-
-\### 2. DataRaceBench
-
-
+### 2. DataRaceBench
 
 `evaluation/DataRaceBench/`
 
+This suite contains curated concurrency micro-benchmarks, especially suitable for evaluating whether DtTsa covers access sites that are relevant to dynamic race reports.
 
-
-This suite contains curated concurrency micro-benchmarks, especially useful for evaluating how DtTsa relates to known race-relevant access sites reported by dynamic race detectors.
-
-
-
-\### 3. SCTBench
-
-
+### 3. SCTBench
 
 `evaluation/SCTBench/`
 
-
-
-This suite contains programs used for controlled concurrency testing and schedule-sensitive bug studies.  
-
-For DtTsa, it is particularly useful for examining repeated-run stability and for evaluating whether reported sharing points can serve as compact schedule-point candidates.
-
-
+This suite contains programs used in controlled concurrency testing and schedule-sensitive bug studies. It is useful for evaluating both the stability of reported sharing points across repeated runs and their potential value as compact schedule-point candidates.
 
 ---
 
+## Included Evaluation Results
 
-
-\## Evaluation Results Included in This Repository
-
-
-
-The repository stores the outputs already produced by DtTsa under:
-
-
+The repository also includes DtTsa outputs under:
 
 ```text
-
 evaluation/results/
-
 ├── CVE-Benchmark/
-
 ├── DataRaceBench/
-
 └── SCTBench/
-
 ```
 
+These directories contain the results produced by DtTsa on the three benchmark suites.
 
+---
 
-These results correspond to the experiments reported in our evaluation.
+## Experimental Summary
 
+### RQ1: Stability Across Runs
 
-
-\### Summary of observed effectiveness
-
-
-
-The current repository includes DtTsa outputs on all three benchmark suites.  
-
-At a high level, the observed results are:
-
-
-
-\- \*\*DataRaceBench:\*\* DtTsa achieves strong overlap with dynamic race-relevant access sites while keeping the reported sharing set compact.
-
-\- \*\*CVE-Benchmark:\*\* DtTsa identifies bug-relevant sharing sites in real-world subjects, including synchronization-aware order/state bugs beyond plain data races.
-
-\- \*\*SCTBench:\*\* DtTsa reports highly stable sharing points across repeated runs and shows promise as a source of compact schedule-point candidates.
-
-
-
-\### RQ1: Stability across runs
-
-
-
-The fraction of high-/mid-/low-frequency sharing points (median across programs) is summarized below.
-
-
+The fractions of high-, mid-, and low-frequency sharing points (median across programs) are summarized below.
 
 | Dataset | High-frequency | Mid-frequency | Low-frequency |
-
 |---|---:|---:|---:|
-
 | CVE-Benchmark | 77.8% | 20.8% | 1.4% |
-
 | DataRaceBench | 82.3% | 14.1% | 3.6% |
-
 | SCTBench | 84.6% | 12.5% | 2.9% |
 
+These results indicate that most reported sharing points are stable across runs, while only a small fraction are strongly schedule- or input-sensitive.
 
+### RQ2: Coverage of Race-Relevant Sites
 
-These numbers indicate that most reported sharing points are stable across runs, while only a small fraction are strongly schedule/input-sensitive.
+Micro-averaged coverage against OpenRace and TSan is summarized below.
 
-
-
-\### RQ2: Coverage of race-relevant sites
-
-
-
-Micro-averaged endpoint and pair coverage against OpenRace/TSan are summarized below.
-
-
-
-| Dataset | OpenRace #Pairs | OpenRace Cov\_end | OpenRace Cov\_pair | TSan #Pairs | TSan Cov\_end | TSan Cov\_pair |
-
+| Dataset | OpenRace #Pairs | OpenRace Cov_end | OpenRace Cov_pair | TSan #Pairs | TSan Cov_end | TSan Cov_pair |
 |---|---:|---:|---:|---:|---:|---:|
-
 | CVE-Benchmark | 63 | 0.60 | 0.40 | 12 | 0.45 | 0.42 |
-
 | DataRaceBench | 269 | 0.67 | 0.63 | 201 | 0.64 | 0.61 |
-
 | SCTBench | 5 | 1.00 | 1.00 | 14 | 0.67 | 0.79 |
 
+These results show that DtTsa covers a substantial portion of race-relevant access endpoints and pairs reported by dynamic race detectors, while also capturing concurrency-relevant sharing sites beyond plain data races.
 
+### RQ3: Overhead Summary
 
-These results show that DtTsa covers a substantial portion of race-relevant access sites and access pairs reported by dynamic race detectors, while also capturing concurrency-relevant behavior beyond plain races.
+The following overhead measurements were collected under three builds:
 
-
-
-\### RQ3: Overhead summary
-
-
-
-The repository also includes overhead measurements collected under three builds:
-
-
-
-\- \*\*Base\*\*: uninstrumented
-
-\- \*\*DtTsa\*\*: instrumented with our tracing
-
-\- \*\*TSan\*\*: compiled with ThreadSanitizer
-
-
+- Base: uninstrumented
+- DtTsa: instrumented with our tracing
+- TSan: compiled with ThreadSanitizer
 
 | Dataset | Slowdown (DtTsa) | Slowdown (TSan) | Peak RSS KB (B/D/T) | Binary KB (B/D/T) |
-
 |---|---:|---:|---|---|
-
 | CVE-Benchmark | 1.33 | 5.8 | 2800 / 2880 / 14560 | 27.5 / 31.5 / 33.0 |
-
 | DataRaceBench | 4.36 | 12.5 | 2880 / 2881 / 19840 | 19.5 / 19.6 / 19.6 |
-
 | SCTBench | 1.86 | 6.2 | 1920 / 1920 / 10944 | 19.9 / 20.1 / 20.1 |
 
-
-
-These measurements indicate that DtTsa is substantially lighter than TSan in both runtime overhead and memory overhead on the evaluated subjects.
-
-
+These measurements suggest that DtTsa is substantially lighter than TSan in both runtime and memory overhead on the evaluated subjects.
 
 ---
 
+## Notes on Reproducibility
 
+To help others reproduce the results, please make sure the following information is consistent with the actual repository contents before publication:
 
-\## Recommended Repository Hygiene
+1. the LLVM version used to build the pass is documented;
+2. the actual pass invocation name (`<PASS_NAME>`) is confirmed and written explicitly;
+3. the output filenames emitted by `runtime.c` are documented once finalized;
+4. dataset directory names in the repository match the names used in this README;
+5. large temporary logs, compiler outputs, and intermediate files are excluded from the public repository.
 
+---
 
+## Recommended Additional Files
 
-Although not strictly required, the following files are strongly recommended before publication.
+Although not strictly required, the following files are recommended for a public repository.
 
+### `.gitignore`
 
-
-\### `.gitignore`
-
-
-
-Do \*\*not\*\* commit:
-
-
-
-\- object files
-
-\- shared libraries
-
-\- temporary trace files
-
-\- compiler outputs
-
-\- large raw logs
-
-\- editor caches
-
-
-
-A minimal example:
-
-
+A minimal example is:
 
 ```gitignore
-
-\*.o
-
-\*.so
-
-\*.bc
-
-\*.ll
-
-\*.out
-
-\*.log
-
-\*.tmp
-
-\_\_pycache\_\_/
-
+*.o
+*.so
+*.bc
+*.ll
+*.out
+*.log
+*.tmp
+__pycache__/
 build/
-
 ```
 
+### `LICENSE`
 
-
-\### `LICENSE`
-
-
-
-Add a license file if the code is intended to be shared publicly or reused by others.
-
-
-
-\### `docs/` (optional)
-
-
-
-If available, you may also include:
-
-
-
-\- workflow figures
-
-\- architecture diagrams
-
-\- example reports
-
-\- a copy of the artifact description used in the paper
-
-
+Add a license if the code is intended for public use or redistribution.
 
 ---
 
+## Contact
 
-
-\## Reproducibility Notes
-
-
-
-To make this repository easy to use for others, please ensure that:
-
-
-
-1\. the LLVM version used to build the pass is documented,
-
-2\. the exact pass invocation (`<PASS\_NAME>`) is confirmed and written explicitly,
-
-3\. the expected runtime output filenames are documented once finalized,
-
-4\. dataset paths in this repository match the paths described in this README,
-
-5\. raw experimental outputs are either pruned or summarized to keep the repository size manageable.
-
-
-
----
-
-
-
-\## Citation
-
-
-
-If you use this code or the benchmark outputs, please cite the corresponding paper describing DtTsa and its evaluation.
-
-
-
----
-
-
-
-\## Contact
-
-
-
-For questions about the code, artifact setup, or evaluation results, please contact the repository maintainer(s).
-
-
+For questions about the code, benchmark setup, or included results, please contact the repository maintainer(s).
 
