@@ -8,7 +8,6 @@ This repository contains:
 
 - the LLVM pass implementation (`src/MemAccessInstrumentPass.cpp`)
 - the runtime support library (`src/runtime.c`)
-- the benchmark programs used in our evaluation (`evaluation/`)
 - the analysis outputs produced by DtTsa on three benchmark suites (`evaluation/results/`)
 
 ---
@@ -22,9 +21,7 @@ DtTsa/
 │   ├── MemAccessInstrumentPass.cpp
 │   └── runtime.c
 └── evaluation/
-    ├── CVE-Benchmark/
-    ├── DataRaceBench/
-    ├── SCTBench/
+    ├── README.md
     └── results/
         ├── CVE-Benchmark/
         ├── DataRaceBench/
@@ -32,7 +29,7 @@ DtTsa/
 ```
 
 - `src/` contains the core implementation of DtTsa.
-- `evaluation/` contains the benchmark subjects used in our experiments.
+- `evaluation/README.md` documents how to obtain and organize the three benchmark suites.
 - `evaluation/results/` contains the outputs produced by DtTsa on the three benchmark suites.
 
 ---
@@ -89,24 +86,26 @@ Important: the LLVM version used to build the pass should match the LLVM version
 
 ## Building DtTsa
 
+The following commands were used in our setup and are recommended for building the pass and the runtime library.
+
 ### 1. Build the LLVM Pass
 
 From the repository root:
 
 ```bash
-clang++ -fPIC -shared src/MemAccessInstrumentPass.cpp -o libMemAccessInstrumentPass.so \
-  `llvm-config --cxxflags --ldflags --system-libs --libs core passes`
+clang++ `llvm-config --cxxflags` -fPIC -shared src/MemAccessInstrumentPass.cpp \
+  -o libMemInst.so `llvm-config --ldflags --system-libs --libs core ipo passes`
 ```
 
 ### 2. Build the Runtime Library
 
 ```bash
-clang -fPIC -shared src/runtime.c -o libruntime.so
+clang -fPIC -shared src/runtime.c -o libruntime.so -lpthread
 ```
 
 After successful compilation, the repository root should contain:
 
-- `libMemAccessInstrumentPass.so`
+- `libMemInst.so`
 - `libruntime.so`
 
 ---
@@ -121,11 +120,7 @@ DtTsa takes the following inputs:
 2. LLVM bitcode generated from that program;
 3. one or more program runs, such as tests, benchmark drivers, or PoCs.
 
-At the repository level, the benchmark sources are organized under:
-
-- `evaluation/CVE-Benchmark/`
-- `evaluation/DataRaceBench/`
-- `evaluation/SCTBench/`
+This repository does not directly store the full benchmark source trees due to repository-size considerations. Instead, the benchmark suites should be obtained separately and placed under the expected local directories described in `evaluation/README.md`.
 
 ### Output
 
@@ -146,7 +141,7 @@ At a minimum, DtTsa reports source-level thread-sharing points observed during e
 
 ---
 
-## How to Use DtTsa on a Single Program
+## Using DtTsa on a Single Program
 
 This section describes the generic workflow for applying DtTsa to a single program.
 
@@ -155,13 +150,13 @@ This section describes the generic workflow for applying DtTsa to a single progr
 For a C program:
 
 ```bash
-clang -O0 -g -emit-llvm -c target.c -o target.bc
+clang -g -emit-llvm -c target.c -o target.bc
 ```
 
 For a C++ program:
 
 ```bash
-clang++ -O0 -g -emit-llvm -c target.cpp -o target.bc
+clang++ -g -emit-llvm -c target.cpp -o target.bc
 ```
 
 If the target uses threads or OpenMP, add the corresponding flags during compilation and linking, for example:
@@ -173,52 +168,49 @@ If the target uses threads or OpenMP, add the corresponding flags during compila
 
 Use the DtTsa pass to transform the bitcode into an instrumented version.
 
-Depending on whether your pass is registered for the legacy pass manager or the new pass manager, use one of the following invocation styles.
-
-#### New Pass Manager Style
+The pass has been tested with the following invocation style:
 
 ```bash
-opt -load-pass-plugin ./libMemAccessInstrumentPass.so \
-    -passes="<PASS_NAME>" \
-    target.bc -o target.inst.bc
+opt -load-pass-plugin /path/to/libMemInst.so -passes=meminst target.bc -o target_inst.bc
 ```
 
-#### Legacy Pass Manager Style
+Replace:
 
-```bash
-opt -load ./libMemAccessInstrumentPass.so \
-    -<PASS_NAME> \
-    target.bc -o target.inst.bc
-```
-
-Replace `<PASS_NAME>` with the actual pass name registered in `src/MemAccessInstrumentPass.cpp`.
+- `/path/to/libMemInst.so` with the actual path to the compiled pass library
+- `target.bc` with the input LLVM bitcode file
+- `target_inst.bc` with the instrumented output bitcode file
 
 ### Step 3. Link the Instrumented Bitcode with the Runtime Library
 
 For a C target:
 
 ```bash
-clang target.inst.bc -L. -lruntime -Wl,-rpath,. -o target.inst
+clang target_inst.bc /path/to/libruntime.so -lpthread -o prog
 ```
 
 For a C++ target:
 
 ```bash
-clang++ target.inst.bc -L. -lruntime -Wl,-rpath,. -o target.inst
+clang++ target_inst.bc /path/to/libruntime.so -lpthread -o prog
 ```
 
-If needed, also add `-pthread` and/or `-fopenmp`.
+Replace:
+
+- `/path/to/libruntime.so` with the actual path to the runtime library
+- `prog` with the desired executable name
+
+If needed, also add `-fopenmp`.
 
 ### Step 4. Run the Instrumented Executable
 
 ```bash
-./target.inst
+./prog
 ```
 
 If the program requires command-line arguments:
 
 ```bash
-./target.inst <program-arguments>
+./prog <program-arguments>
 ```
 
 ### Step 5. Inspect the Output
@@ -228,7 +220,7 @@ After execution, DtTsa emits runtime-generated dynamic-analysis outputs. Dependi
 If your current implementation uses fixed output filenames, document them here explicitly. For example:
 
 - `memtrace.log`
-- `thread_accesses.json`
+- `thread_accesses.txt`
 - `summary_pairs.txt`
 
 If the filenames vary by benchmark, describe the naming convention used in `evaluation/results/`.
@@ -251,33 +243,29 @@ DtTsa may also track how frequently a reported sharing point appears across runs
 
 ---
 
-## Benchmark Suites Included in This Repository
+## Benchmark Suites
 
-This repository includes three benchmark suites used in our evaluation.
+This repository is organized around three benchmark families.
 
 ### 1. CVE-Benchmark
 
-`evaluation/CVE-Benchmark/`
-
-This suite contains real-world concurrency-related vulnerability subjects. It is used to evaluate whether DtTsa can recover source-level sharing sites that are relevant to known bug-triggering interleavings under available PoCs or test drivers.
+This benchmark suite contains real-world concurrency-related vulnerability subjects. It is used to evaluate whether DtTsa can recover source-level sharing sites that are relevant to known bug-triggering interleavings under available PoCs or test drivers.
 
 ### 2. DataRaceBench
-
-`evaluation/DataRaceBench/`
 
 This suite contains curated concurrency micro-benchmarks, especially suitable for evaluating whether DtTsa covers access sites that are relevant to dynamic race reports.
 
 ### 3. SCTBench
 
-`evaluation/SCTBench/`
-
 This suite contains programs used in controlled concurrency testing and schedule-sensitive bug studies. It is useful for evaluating both the stability of reported sharing points across repeated runs and their potential value as compact schedule-point candidates.
+
+Please see `evaluation/README.md` for dataset sources, expected directory layout, and preparation instructions.
 
 ---
 
 ## Included Evaluation Results
 
-The repository also includes DtTsa outputs under:
+The repository includes DtTsa outputs under:
 
 ```text
 evaluation/results/
@@ -339,36 +327,10 @@ These measurements suggest that DtTsa is substantially lighter than TSan in both
 To help others reproduce the results, please make sure the following information is consistent with the actual repository contents before publication:
 
 1. the LLVM version used to build the pass is documented;
-2. the actual pass invocation name (`<PASS_NAME>`) is confirmed and written explicitly;
+2. the actual pass invocation name (`meminst`) is confirmed and written explicitly;
 3. the output filenames emitted by `runtime.c` are documented once finalized;
 4. dataset directory names in the repository match the names used in this README;
 5. large temporary logs, compiler outputs, and intermediate files are excluded from the public repository.
-
----
-
-## Recommended Additional Files
-
-Although not strictly required, the following files are recommended for a public repository.
-
-### `.gitignore`
-
-A minimal example is:
-
-```gitignore
-*.o
-*.so
-*.bc
-*.ll
-*.out
-*.log
-*.tmp
-__pycache__/
-build/
-```
-
-### `LICENSE`
-
-Add a license if the code is intended for public use or redistribution.
 
 ---
 
